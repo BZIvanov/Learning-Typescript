@@ -1,0 +1,36 @@
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: Forte, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-items ul {
+    margin-top: 70px;
+    display: flex;
+}
+
+.header-items li {
+    list-style: none;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-items li:nth-of-type(2) {
+    flex-grow: 2;
+    background: gold;
+}
+
+.header-items a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: coral;
+}
+
+.header-items li:nth-of-type(2) a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

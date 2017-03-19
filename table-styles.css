@@ -26,8 +26,8 @@ thead th {
 thead img {
     position: absolute;
     width: 40%;
-    top: -220px;
-    left: 750px;
+    top: -230px;
+    left: 720px;
 }
 
 tbody tr {
@@ -65,4 +65,54 @@ tbody tr:last-of-type td {
 
 tfoot td[rowspan="2"] {
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 1200px) {
+    thead th {
+        font-size: 2em;
+    }
+
+    thead img {
+        width: 30%;
+        top: -190px;
+        left: 730px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    thead th {
+        font-size: 1.7em;
+        padding: 10px;
+    }
+
+    thead img {
+        width: 250px;
+        top: -210px;
+        left: calc(35% + 10px);
+    }
+
+    tbody tr {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    thead th {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    thead img {
+        width: 250px;
+        top: -210px;
+        left: calc(35% + 10px);
+    }
+
+    tbody tr {
+        font-size: 0.6em;
+    }
+
+    tbody td {
+        border: 1px solid #b7ff99;
+    }
 }

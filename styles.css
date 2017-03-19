@@ -83,15 +83,15 @@ main, .navigation, .site-footer {
 }
 
 .warning h1 {
-    position: relative;
     color: #ff2528;
+    position: relative;
 }
 
 .warning h1::after {
     content: url(images/warning.png);
     position: absolute;
     top: -20px;
-    left: 120px;
+    padding-left: 20px;
 }
 
 .warning h2 {
