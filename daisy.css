@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Branding;
+    src: url(fonts/branding.ttf);
+}
+
 html {
     font-size: 18px;
 }
@@ -8,6 +13,7 @@ body {
     padding: 0;
 }
 
+/*HEADER*/
 .header-items ul {
     margin-top: 70px;
     display: flex;
@@ -33,4 +39,29 @@ body {
 .header-items li:nth-of-type(2) a {
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.header-items li:first-of-type a:after {
+    content: "True?";
+}
+
+.header-items li:nth-of-type(2) a:after {
+    content: "I am above 1024px";
+}
+
+.header-items li:last-child a:after {
+    content: "False?";
+}
+
+/*MAIN*/
+.main-items {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 500px;
+}
+
+.main-items h1:first-letter {
+    font-size: 3rem;
+    color: #604f3a;
 }
