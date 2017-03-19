@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
+
+html {
+    font-family: Orbitron, sans-serif;
+}
+
+body {
+    background: linear-gradient(190deg, rgba(124, 255, 26, 0.71), rgba(213, 255, 20, 0.7) 100%);
+    margin: 0;
+    padding: 0;
+}
+
+main, .navigation, .site-footer {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* navigation header stylings*/
+.navigation ul {
+    width: 70%;
+    text-align: center;
+    margin: 30px auto;
+    padding-bottom: 15px;
+    border-bottom: 1px groove #ffaba1;
+    border-right: 1px groove #ffaba1;
+    border-bottom-right-radius: 5px;
+}
+
+.navigation li {
+    display: inline-block;
+    list-style: none;
+    padding: 5px 20px;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: crimson;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+}
+
+.navigation li:hover,
+.navigation li:hover a {
+    background: rgba(213, 255, 20, 0.7);
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: #ffaba1;
+}
+
+.navigation li:hover {
+    box-shadow: 0 0 5px white;
+    cursor: pointer;
+}
+
+/* intro section stylings*/
+.intro {
+    text-align: center;
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ff2528;
+}
+
+.intro ol {
+    display:table;
+    margin:0 auto;
+}
+
+.intro h1 {
+    font-weight: 500;
+    text-align: center;
+}
+
+.intro h1 strong {
+    text-decoration: underline;
+}
+
+/* warning section stylings*/
+.warning {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.warning h1 {
+    position: relative;
+    color: #ff2528;
+}
+
+.warning h1::after {
+    content: url(images/warning.png);
+    position: absolute;
+    top: -20px;
+    left: 120px;
+}
+
+.warning h2 {
+    font-size: 1.1em;
+}
+
+.warning dl {
+    text-align: left;
+    margin: 35px;
+}
+
+.warning dl dt {
+    color: crimson;
+}
+
+.warning p > q {
+    font-weight: bold;
+}
+
+/* main footer stylings*/
+.site-footer {
+    text-align: center;
+    font-style: italic;
+    margin: 50px auto 20px auto;
+}
+
+.site-footer img {
+    width: 20px;
+    vertical-align: middle;
+    padding-left: 15px;
+}
