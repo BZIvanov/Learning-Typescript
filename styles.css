@@ -111,6 +111,11 @@ main, .navigation, .site-footer {
     font-weight: bold;
 }
 
+.penguin {
+    width: 200px;
+    min-width: 50px;
+}
+
 /* main footer stylings*/
 .site-footer {
     text-align: center;
