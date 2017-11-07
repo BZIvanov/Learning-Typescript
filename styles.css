@@ -1,130 +1,53 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700');
-@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
-
-html {
-    font-family: Orbitron, sans-serif;
-}
-
 body {
-    background: linear-gradient(190deg, rgba(124, 255, 26, 0.71), rgba(213, 255, 20, 0.7) 100%);
-    margin: 0;
-    padding: 0;
+    background: -moz-linear-gradient(-45deg, 
+    rgba(121, 75, 139, 0.57) 0%, 
+    rgba(74, 155, 221, 0.52) 50%, 
+    rgba(89, 171, 238, 0.52) 51%, 
+    rgba(125,185,232,0.47) 100%);
+    background: -webkit-linear-gradient(-45deg,
+     rgba(121, 75, 139, 0.57) 0%,
+     rgba(74, 155, 221, 0.52) 50%,
+     rgba(89, 171, 238, 0.52) 51%,
+     rgba(125,185,232,0.47) 100%);
 }
 
-main, .navigation, .site-footer {
-    width: 70%;
-    margin: 0 auto;
-}
-
-/* navigation header stylings*/
-.navigation ul {
-    width: 70%;
-    text-align: center;
-    margin: 30px auto;
-    padding-bottom: 15px;
-    border-bottom: 1px groove #ffaba1;
-    border-right: 1px groove #ffaba1;
-    border-bottom-right-radius: 5px;
-}
-
-.navigation li {
-    display: inline-block;
-    list-style: none;
-    padding: 5px 20px;
-}
-
-.navigation li a {
-    text-decoration: none;
-    color: crimson;
-    font-size: 1.1em;
-    letter-spacing: 2px;
-}
-
-.navigation li:hover,
-.navigation li:hover a {
-    background: rgba(213, 255, 20, 0.7);
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    color: #ffaba1;
-}
-
-.navigation li:hover {
-    box-shadow: 0 0 5px white;
-    cursor: pointer;
-}
-
-/* intro section stylings*/
-.intro {
-    text-align: center;
-    margin-bottom: 100px;
-    padding-bottom: 20px;
-    border-bottom: 1px dashed #ff2528;
-}
-
-.intro ol {
-    display:table;
-    margin:0 auto;
-}
-
-.intro h1 {
-    font-weight: 500;
-    text-align: center;
-}
-
-.intro h1 strong {
-    text-decoration: underline;
-}
-
-/* warning section stylings*/
-.warning {
-    width: 50%;
-    margin: auto;
-    text-align: center;
-}
-
-.warning h1 {
-    color: #ff2528;
-    position: relative;
-}
-
-.warning h1::after {
-    content: url(images/warning.png);
-    position: absolute;
-    top: -20px;
-    padding-left: 20px;
-}
-
-.warning h2 {
-    font-size: 1.1em;
-}
-
-.warning dl {
-    text-align: left;
-    margin: 35px;
-}
-
-.warning dl dt {
-    color: crimson;
-}
-
-.warning p > q {
+header > h1 {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin: 30px 0;
+    color: green;
     font-weight: bold;
+    text-shadow: 1px 1px 1px yellow;
 }
 
-.penguin {
-    width: 200px;
-    min-width: 50px;
+span {
+    color: rgb(49, 44, 44);
 }
 
-/* main footer stylings*/
-.site-footer {
-    text-align: center;
-    font-style: italic;
-    margin: 50px auto 20px auto;
+#first, #second, #third, #sixth, #howMany, #tagStep {
+    background: rgb(195, 247, 195);
 }
 
-.site-footer img {
-    width: 20px;
-    vertical-align: middle;
-    padding-left: 15px;
+#forth, #fifth, #dotStep {
+    background: rgb(248, 241, 201);
+}
+
+#create {
+    border-radius: 20px;
+    background: greenyellow;
+    padding: 10px 0;
+    font-weight: bold;
+    color: blue;
+    outline: none;
+}
+
+#create:hover {
+    cursor: pointer;
+    background: blue;
+    color: greenyellow;
+}
+
+#result {
+    height: 500px;
+    border-top-left-radius: 20px;
+    outline: none;
 }

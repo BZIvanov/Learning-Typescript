@@ -1,70 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Nal Hutta</title>
+    <title>Concatenate tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- favicon image below-->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <!-- include jquery before other scripts -->
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="solution.js"></script>
 </head>
 
 <body>
+    <header class="row">
+            <!-- class text-center is also from bootstrap-->
+            <h1 class="col-lg-12 text-center">Tags creator tool</h1>
+    </header>
+    
+    <main>
+        <section class="row">
+                <p class="col-md-3 col-sm-3 text-center"></p>
+                <p class="col-md-1 col-sm-1 text-center">Start with? <span>^</span></p>
+                <p class="col-md-1 col-sm-1 text-center">Type of tag? <span>D</span></p>
+                <p class="col-md-1 col-sm-1 text-center">Start number? <span>100</span></p>
+                <p class="col-md-1 col-sm-1 text-center">Have dot? <span>.</span></p>
+                <p class="col-md-1 col-sm-1 text-center">Number after dot? <span>1</span></p>
+                <p class="col-md-1 col-sm-1 text-center">Ends with? <span>^</span></p>
+                <p class="col-md-3 col-sm-3 text-center"></p>
+        </section>
 
-<header class="navigation">
-    <nav>
-        <ul>
-            <li><a href="table.html" target="_blank">Project table</a></li>
-            <li><a href="transform.html">Some more</a></li>
-            <li><a href="#">False</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <section class="intro">
-        <h1>Hello, this is team <strong>Nal Hutta</strong> web-site</h1>
-        <h3>more specifically it is &lt;h1&gt; tag followed by &lt;h3&gt; tag</h3>
-        <h4>and a greeting picture floating below</h4>
-        <img src="images/hello_world.png" width="300" height="150"/>
-        <h5>Correction! There is no <span>float below</span> yet. This is only HTML5 in an &lt;h5&gt; tag</h5>
-        <p>Time for a short summary. We have used so far...</p>
-        <ol>
-            <li>one thing</li>
-            <li>then another</li>
-            <li>followed by a meaningless summary</li>
-        </ol>
-        <p>and latin translation for non-english speaking viewers</p>
-        <ol type="I">
-            <li>Lorem</li>
-            <li>ipsum dolor</li>
-            <li>sit amet</li>
-        </ol>
-    </section>
-
-    <section class="warning">
-        <h1>Warning</h1>
-        <p>if you keep reading, you may learn some basics about HTML<sup>5</sup> and CSS<sup>3</sup>. <span> Proceed on your own risk!!!</span></p>
-        <h2>here are some definitions</h2>
-        <dl>
-            <dt>Square</dt>
-                <dd>Something that didn't fit where you wanted, and was left where it was</dd>
-            <dt>Storm</dt>
-                <dd>One word for both your software and semantic you used</dd>
-            <dt>Design</dt>
-                <dd>The same as mess, but with a lot of hours spent on it</dd>
-        </dl>
-        <p>After the few <em>definitions</em>. Here is something even more <em>inspirational</em>:</p>
-        <p><q>Talk is cheap. Show me the code.</q> Linus Torvalds</p>
-        <img src="images/penguin.jpg" class="penguin"/>
-    </section>
-</main>
-
-<footer class="site-footer">
-    &copy; Nal Hutta team project
-    <img src="images/Hutta.png" alt="footer logo">
-    <p><time>March 2017</time></p>
-</footer>
-
+        <form action="#" class="row">
+            <p class="col-md-3 col-sm-3 text-center"></p>
+            <input type="text" id="first" class="col-md-1 col-sm-1 text-center" value="^">
+            <input type="text" id="second" class="col-md-1 col-sm-1 text-center" value="D">
+            <input type="text" id="third" class="col-md-1 col-sm-1 text-center" value="100">
+            <input type="text" id="forth" class="col-md-1 col-sm-1 text-center" value="">
+            <input type="text" id="fifth" class="col-md-1 col-sm-1 text-center" value="">
+            <input type="text" id="sixth" class="col-md-1 col-sm-1 text-center" value="^">
+            <p class="col-md-3 col-sm-3 text-center"></p>
+        </form>
+        <br/>
+        <section class="row">
+            <p class="col-md-3"></p>
+            <label for="howMany" class="col-md-4">How Many Tags you need?</label>
+            <input type="text" id="howMany" class="col-md-1" value=30>
+            <p class="col-md-4"></p>
+            <p class="col-md-3"></p>
+            <label for="tagStep" class="col-md-4">With what step to increase before dot?</label>
+            <input type="text" id="tagStep" class="col-md-1" value=1>
+            <p class="col-md-4"></p>
+            <p class="col-md-3"></p>
+            <label for="dotStep" class="col-md-4">With what step to increase after dot?</label>
+            <input type="text" id="dotStep" class="col-md-1">
+            <p class="col-md-4"></p>
+        </section>
+        <br/>
+        <section class="row">
+                <p class="col-md-4 col-sm-4 text-center"></p>
+                <input type="submit" id="create" class="col-md-4 col-sm-4 text-center" value="Create :)">
+                <p class="col-md-4 col-sm-4 text-center"></p>
+        </section>
+        <br/>
+        <section class="row">
+                <p class="col-md-4 col-sm-4 text-center"></p>
+                <textarea id="result" class="col-md-4 col-sm-4 text-center"></textarea>
+                <p class="col-md-4 col-sm-4 text-center"></p>
+        </section>
+    </main>
+    
 </body>
+
 </html>
