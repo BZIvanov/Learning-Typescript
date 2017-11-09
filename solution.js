@@ -12,6 +12,11 @@ $(document).ready(function() {
         let numberOfTags = Number($("#howMany").val());
         let tagStep = Number($("#tagStep").val());
         let dotStep = $("#dotStep").val();
+        let loopStep = 1;
+        let dataItem = thirdItem;
+        if (tagStep != 0) {
+            loopStep = tagStep;
+        }
 
         if (fifthItem != "") {
             fifthItem = Number(fifthItem);
@@ -20,8 +25,9 @@ $(document).ready(function() {
             dotStep = Number(dotStep);
         }
         let textResult = "";
-        for (let i = thirdItem; i < thirdItem + (numberOfTags * tagStep); i += tagStep) {
-            textResult += `${firstItem}${secondItem}${i}${forthItem}${fifthItem}${sixthItem}\n`;
+        for (let i = thirdItem; i < thirdItem + (numberOfTags * loopStep); i += loopStep) {
+            textResult += `${firstItem}${secondItem}${dataItem}${forthItem}${fifthItem}${sixthItem}\n`;
+            dataItem += tagStep;
             if(Number.isInteger(dotStep)) {
                 fifthItem += dotStep;
             } 
@@ -30,12 +36,10 @@ $(document).ready(function() {
             $("#dotStep").css("background-color", "red");
         }
         else {
-            $("#dotStep").css("background-color", "white");
+            $("#dotStep").css("background-color", "yellow");
         }
         
         $("#result").val(textResult.split(","));
-        console.log(forthItem);
-        console.log(fifthItem);
     })
 
     //check if dot is added for tag with dot. If not remove cells content on others
