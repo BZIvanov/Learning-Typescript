@@ -49,4 +49,11 @@ $(document).ready(function() {
             $("#dotStep").val("");
         }
     }
+
+    //when clicked the textarea automatically select the text in textarea and copy it
+    $("#result").focus(function() {
+        let $this = $(this);
+        $this.select();
+        document.execCommand('copy');
+    })
 });
