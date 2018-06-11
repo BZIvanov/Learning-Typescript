@@ -4,10 +4,129 @@
     <meta charset="utf-8">
     <title>Working with Angular</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="xxx.css"> -->
+    <link rel="stylesheet" href="./angularGuides.css">
     <!-- <script src="xxx.js"></script> -->
 </head>
 <body>
-    
+    <h1>1. Install TypeScrypt and Angular CLI</h1>
+    <ol>
+        <li>
+            <p>For using Angular it is a good practice to combine it with using TypeScript. To install TypeScript open command prompt and write the following <span class="cmd">npm install -g typescript</span> and press Enter.</p>
+            <p class="note">Note: This step has to be done only once and it will works for all projects because we are installing it with global –g modifier which will install in the folder with all modules and not in the current project folder</p>
+        </li>
+        <li>
+            <p>The next step is to install Angular CLI which will allow us to use commands for working with Angular. To install Angular CLI in the command prompt write the following <span class="cmd">npm install -g @angular/cli</span> and press Enter</p>
+            <p class="note">Note: This step has to be done only once and it will works for all projects because we are installing it with global –g modifier which will install in the folder with all modules and not in the current project folder</p>
+        </li>
+    </ol>
+
+    <h1>2. Creating new Angular project</h1>
+    <ol>
+        <li>
+            <p>In the command prompt open the folder where you want to start the new project. And then type <span class="cmd">ng new example-project</span> and press Enter</p>
+            <p class="note">Note: example-project is an example folder name where our project is created, you can specify another one if you want. Only ng new has to be the same</p>
+        </li>
+        <li>
+            <p>Open the new created project with Visual Studio Code and you are ready to start working on the project.</p>
+        </li>
+    </ol>
+
+    <h1>3. Creating Component</h1>
+    <p>We can create our own new component in 2 ways: manually or using the angular cli. First we will see how to create our own new component manually.</p>
+    <h2>3.1 Creating Component manually</h2>
+    <ol>
+        <li>
+            <p>The app folder in src folder is where our components are stored</p>
+            <p>We can see our main components holding the start point of project which is app.component.xxx</p>
+        </li>
+        <li>
+            <p>We will create another folder named games in the app folder where we will store our new component. And in the new folder we will create our first needed file games.component.ts which is the typescrypt component</p>
+            <p class="note">Note: Folder name “games” is example name, of course we can name our folder the way we want to easier recognize it. Same applies for the file games.component.ts where only the games part is optional and then we must write .component.ts</p>
+            <p>If we have done everything correctly our directory should look like: 
+                <pre class="directory">
+    <span class="folder">src</span>
+        <span class="folder">app</span> 
+            <span class="folder">games</span>
+                games.component.ts 
+            app.component.css
+            app.component.html
+            app.component.specs.ts
+            app.component.ts
+            app.module.ts
+                </pre>
+            </p>
+        </li>
+        <li>
+            <p>Now we will add content to the file games.component.ts Every class must has @Component decorator function in which we specify 3 items (only 2 for now but later we will add one more). The first one is selector which specify in which html element component will be rendered and template holding the elements. In this case we use inline template meaning we write all html in this file, later we will write it in another file and in the template property we will only specify that file.</p>
+            <pre class="code-piece">
+File: games.component.ts
+
+<span class="purple">import</span> { <span class="lblue">Component</span> } <span class="purple">from</span> <span class="brown">'@angular/core'</span>;
+
+@<span class="yellow">Component</span>(
+    {
+        <span class="lblue">selector:</span> <span class="brown">'game'</span>
+        <span class="lblue">template:</span> <span class="brown">'&lt;h1>{{title}}&lt;h1>'</span>
+    }
+)
+<span class="purple">export</span> <span class="blue">class</span> <span class="green">GameComponent</span> {
+    <span class="lblue">title</span>: <span class="green">string</span> = <span class="brown">"Assassin's Creed"</span>
+}
+            </pre>
+        </li>
+        <li>
+            <p>We have created our component but the starting point of the project doesn’t know yet so we have to specify it in the app.module.ts file. Before we write anything in it by default it looks like this:</p>
+            <pre class="code-piece">
+File: app.module.ts
+                    
+<span class="purple">import</span> { <span class="lblue">BrowserModule</span> } <span class="purple">from</span> <span class="brown">'@angular/platform-browser'</span>;
+<span class="purple">import</span> { <span class="lblue">NgModule</span> } <span class="purple">from</span> <span class="brown">'@angular/core'</span>;
+
+<span class="purple">import</span> { <span class="lblue">AppComponent</span> } <span class="purple">from</span> <span class="brown">'./app.component'</span>;
+
+@<span class="yellow">NgModule</span>({
+    <span class="lblue">declarations:</span> [
+        <span class="lblue">AppComponent</span>
+    ],
+    <span class="lblue">imports</span> [
+        <span class="lblue">BrowserModule</span>
+    ],
+    <span class="lblue">providers:</span> [],
+    <span class="lblue">bootstrap:</span> [<span class="lblue">AppComponent</span>]
+})
+<span class="purple">export</span> <span class="blue">class</span> <span class="green">AppModule</span> { }
+            </pre>
+            <p>Now lets tell angular about our new component by importing it and also specify it in the declarations property</p>
+            <pre class="code-piece">
+File: app.module.ts
+                                        
+<span class="purple">import</span> { <span class="lblue">BrowserModule</span> } <span class="purple">from</span> <span class="brown">'@angular/platform-browser'</span>;
+<span class="purple">import</span> { <span class="lblue">NgModule</span> } <span class="purple">from</span> <span class="brown">'@angular/core'</span>;
+                    
+<span class="purple">import</span> { <span class="lblue">AppComponent</span> } <span class="purple">from</span> <span class="brown">'./app.component'</span>;
+<span class="purple">import</span> { <span class="lblue">GameComponent</span> } <span class="purple">from</span> <span class="brown">'./games/games.component'</span>;
+                    
+@<span class="yellow">NgModule</span>({
+    <span class="lblue">declarations:</span> [
+        <span class="lblue">AppComponent</span>,
+        <span class="lblue">GameComponent</span>
+    ],
+    <span class="lblue">imports</span> [
+        <span class="lblue">BrowserModule</span>
+    ],
+    <span class="lblue">providers:</span> [],
+    <span class="lblue">bootstrap:</span> [<span class="lblue">AppComponent</span>]
+})
+<span class="purple">export</span> <span class="blue">class</span> <span class="green">AppModule</span> { }
+            </pre>
+        </li>
+    </ol>
+
+
+    <footer>
+        <h4>Here is a legend for what most of stylings stand for</h4>
+        <p><span class="folder">example</span> - refers to a folder name</p>
+        <p><span class="cmd">example</span> - refers to something you type in the windows command prompt</p> 
+    </footer>
 </body>
 </html>
