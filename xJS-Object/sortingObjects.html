@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Object Sorting</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../sorting.css">
+    <script src="sortingObjects.js"></script>
+</head>
+<body>
+    <a href="learnSource.html" id="main-page">Main Page</a>
+    <h1>Examples of how to sort Object</h1>
+    <p>Below we will generate the Object, which will use for examples</p>
+    <div class="source-code">
+        <p class="white-text">Source code:</p>
+        <p><span class="blue">let</span> <span class="lblue">myObj</span> = {<br>
+            <span class="lblue">obj1</span>: {<span class="lblue">value</span>: <span class="olive">3</span>},<br>
+            <span class="lblue">obj2</span>: {<span class="lblue">value</span>: <span class="olive">1</span>},<br>
+            <span class="lblue">obj3</span>: {<span class="lblue">value</span>: <span class="olive">2</span>},<br>
+            <span class="lblue">obj4</span>: {<span class="lblue">value</span>: <span class="olive">5</span>},<br>
+            <span class="lblue">obj5</span>: {<span class="lblue">value</span>: <span class="olive">4</span>},<br>
+        }</p>
+    </div>
+    <div class="code-output" id="initial">
+        <p class="white-text">Code output:</p>
+        <p class="indentIt">{ obj1: { value: 3 },
+obj2: { value: 1 },
+obj3: { value: 2 },
+obj4: { value: 5 },
+obj5: { value: 4 } }</p>
+    </div>
+
+    <!-- example A -->
+    <section class="example">
+        <div>
+            <button class="btnInfo">Show</button>
+            <p class="explanation">Sorted keys in the Object</p>
+            <p class="additionalInfo">Here we get only the keys sorted alphabetically</p>
+        </div>
+        <article>
+            <div class="source-code">
+                <p class="white-text">Source code:</p>
+                <p class="indentIt"><span class="blue">let</span> <span class="lblue">sortedKeys</span> = <span class="green">Object</span>.<span class="yellow">keys</span>(<span class="lblue">myObj</span>).<span class="yellow">sort</span>()
+                </p>
+            </div>
+            <div class="code-output">
+                <p class="white-text">Code output:</p>
+                <p class="indentIt">[ 'obj1', 'obj2', 'obj3', 'obj4', 'obj5' ]</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- example B -->
+    <section class="example">
+        <div>
+            <button class="btnInfo">Show</button>
+            <p class="explanation">Sorted keys in the Object by their nested values</p>
+            <p class="additionalInfo">We will sort ascending the keys of object based on the number value in their nested keys</p>
+        </div>
+        <article>
+            <div class="source-code">
+                <p class="white-text">Source code:</p>
+                <p class="indentIt"><span class="blue">let</span> <span class="lblue">sortedKeys</span> = <span class="green">Object</span>.<span class="yellow">keys</span>(<span class="lblue">myObj</span>).<span class="yellow">sort</span>((<span class="lblue">a</span>, <span class="lblue">b</span>) <span class="blue">=></span> {
+    <span class="blue">let</span> <span class="lblue">diff</span> = <span class="lblue">myObj</span>[<span class="lblue">a</span>][<span class="brown">"value"</span>] > <span class="lblue">myObj</span>[<span class="lblue">b</span>][<span class="brown">"value"</span>]
+    <span class="purple">if</span> (<span class="lblue">myObj</span>[<span class="lblue">a</span>][<span class="brown">"value"</span>] === <span class="lblue">myObj</span>[<span class="lblue">b</span>][<span class="brown">"value"</span>]) {        
+        <span class="purple">return</span> <span class="olive">0</span>
+    }
+    <span class="purple">return</span> <span class="lblue">diff</span>
+})
+<span class="purple">return</span> <span class="lblue">sortedKeys</span>
+</p>
+            </div>
+            <div class="code-output">
+                <p class="white-text">Code output:</p>
+                <p class="indentIt">[ 'obj2', 'obj3', 'obj1', 'obj5', 'obj4' ]</p>
+            </div>
+        </article>
+    </section>
+
+
+    <script>
+        $(document).ready( function() {
+            workflow()
+        })
+    </script>
+</body>
+</html>
