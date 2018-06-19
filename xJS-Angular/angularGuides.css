@@ -26,6 +26,12 @@ h2 {
     padding: 3px 0px;
 }
 
+.terminal {
+    background-color: rgba(36, 34, 34, 0.836);
+    color: white;
+    padding: 3px 0px;
+}
+
 .note {
     font-style: italic;
 }
@@ -72,6 +78,10 @@ h2 {
 
 .green {
     color: lightseagreen;
+}
+
+img {
+    max-width: 500px;
 }
 
 footer {

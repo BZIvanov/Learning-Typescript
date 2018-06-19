@@ -38,6 +38,15 @@
         <li>
             <p>The app folder in src folder is where our components are stored</p>
             <p>We can see our main components holding the start point of project which is app.component.xxx</p>
+            <pre class="directory">
+    <span class="folder">src</span>
+        <span class="folder">app</span> 
+            app.component.css
+            app.component.html
+            app.component.specs.ts
+            app.component.ts
+            app.module.ts
+            </pre>
         </li>
         <li>
             <p>We will create another folder named games in the app folder where we will store our new component. And in the new folder we will create our first needed file games.component.ts which is the typescrypt component</p>
@@ -57,7 +66,23 @@
             </p>
         </li>
         <li>
-            <p>Now we will add content to the file games.component.ts Every class must has @Component decorator function in which we specify 3 items (only 2 for now but later we will add one more). The first one is selector which specify in which html element component will be rendered and template holding the elements. In this case we use inline template meaning we write all html in this file, later we will write it in another file and in the template property we will only specify that file.</p>
+            <p> We will also create the html and css component files in the folder games which is where our new component is placed. And after we are done our directory should look like this:</p>
+            <pre class="directory">
+    <span class="folder">src</span>
+        <span class="folder">app</span> 
+            <span class="folder">games</span>
+                games.component.css
+                games.component.html
+                games.component.ts
+            app.component.css
+            app.component.html
+            app.component.specs.ts
+            app.component.ts
+            app.module.ts
+            </pre>
+        </li>
+        <li>
+            <p>Now we will add content to the file games.component.ts First we will import Component module to be able to use it. Every class component must has @Component decorator function in which we specify 3 items: The first one is selector which specify in which html element component will be rendered. Template pointing which html file will be our template. And the last property styleUrls is an array with all stylesheets we are going to use.</p>
             <pre class="code-piece">
 File: games.component.ts
 
@@ -65,8 +90,9 @@ File: games.component.ts
 
 @<span class="yellow">Component</span>(
     {
-        <span class="lblue">selector:</span> <span class="brown">'game'</span>
-        <span class="lblue">template:</span> <span class="brown">'&lt;h1>{{title}}&lt;h1>'</span>
+        <span class="lblue">selector:</span> <span class="brown">'game'</span>,
+        <span class="lblue">templateUrl:</span> <span class="brown">'./game.component.html'</span>,
+        <span class="lblue">styleUrls:</span> [ <span class="brown">'./game.component.css'</span> ]
     }
 )
 <span class="purple">export</span> <span class="blue">class</span> <span class="green">GameComponent</span> {
@@ -119,6 +145,35 @@ File: app.module.ts
 })
 <span class="purple">export</span> <span class="blue">class</span> <span class="green">AppModule</span> { }
             </pre>
+            <p>We have our component ready but we still need to add content to the html file.</p>
+        </li>
+        <li>
+            <p>In our ts component file we have specified property title so lets use it in the html. We have only one h1 tag holding the title property from ts file. Using double curly brackets like this is called data binding, meaning that we get data from the ts file and use it in our html template</p>
+            <pre class="code-piece">
+File: games.component.html
+            
+    &lt;<span class="blue">h1</span>&gt;{{title}}&lt;/<span class="blue">h1</span>&gt;
+            </pre>
+        </li>
+        <li>
+            <p>The next step is to use the selector from our ts component file in the parent html template where we want our component to be rendered. In our ts file we named our selector 'game' so to render it we need to name the html element 'game'. We will render it in the parent html file which is app.component.html We will remove some of the html elements from it to make it more simple looking and make it look like this:</p>
+            <pre class="code-piece">
+File: app.component.html
+                                
+    &lt;<span class="blue">div</span> <span class="lblue">style</span>=<span class="brown">"text-align:center"</span>&gt;
+        &lt;<span class="blue">h1</span>&gt;
+            Welcome to {{title}}!
+        &lt;/<span class="blue">h1</span>&gt;
+        &lt;<span class="blue">img</span> <span class="lblue">width</span>=<span class="brown">"300"</span> <span class="lblue">alt</span>= .....&gt;
+    &lt;/<span class="blue">div</span>&gt;
+    &lt;<span class="blue">game</span>&gt;&lt;/<span class="blue">game</span>&gt;
+            </pre>
+        </li>
+        <li>
+            <p>And now to display everything we have created so far let's run the project. We do that by typing <span class="terminal">ng serve --open</span></p>
+            <p>If we have done everything correctly so far in the broswer we should see the following screen</p>
+            <img src="./images/screenPart.PNG" alt="angularScreen">
+            <p class="note">Note: --open part of the command is to also open the project in the browser, without it we have to open it manually usually on localhost:4200</p>
         </li>
     </ol>
 
@@ -126,7 +181,8 @@ File: app.module.ts
     <footer>
         <h4>Here is a legend for what most of stylings stand for</h4>
         <p><span class="folder">example</span> - refers to a folder name</p>
-        <p><span class="cmd">example</span> - refers to something you type in the windows command prompt</p> 
+        <p><span class="cmd">example</span> - refers to something you type in the windows command prompt</p>
+        <p><span class="terminal">example</span> - refers to something you type in the terminal in Visual studio code</p>
     </footer>
 </body>
 </html>
