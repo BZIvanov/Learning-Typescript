@@ -172,8 +172,79 @@ File: app.component.html
         <li>
             <p>And now to display everything we have created so far let's run the project. We do that by typing <span class="terminal">ng serve --open</span></p>
             <p>If we have done everything correctly so far in the broswer we should see the following screen</p>
-            <img src="./images/screenPart.PNG" alt="angularScreen">
+            <div class="image-ctr">
+                <img src="./images/screenPart.PNG" alt="angularScreen">
+            </div>
             <p class="note">Note: --open part of the command is to also open the project in the browser, without it we have to open it manually usually on localhost:4200</p>
+        </li>
+    </ol>
+
+    <h2>3.2 Creating Component with the CLI</h2>
+    <ol>
+        <li>
+            <p>To create component with the CLI go to the Visual studio code terminal and type <span class="terminal">ng generate component about</span> and press Enter. Keep in mind only ng generate component has to be the same and "about" is random name of how we want to name our new component</p>
+            <div class="image-ctr">
+                <img src="./images/01.PNG" alt="img">
+            </div>
+            <p>And now our directory should look like this:</p>
+            <div class="image-ctr">
+                <img src="./images/02.PNG" alt="img">
+            </div>
+            <p>And that's it, the angular CLI created for us html, css and ts component files plus specs file used for unit testing. And also imported our new module in the app.module.ts file </p>
+        </li>
+    </ol>
+
+    <h1>Using *ngFor and *ngIf examples</h1>
+    <ol>
+        <li>
+            <p>For this example we will use a component games created for example purpose. In the component we created few files html, css and ts component files plus one more file named games.ts. Here is it's content. As you can see other than component files we can have some other holding some of the logic we want to use. In this case we have file holding a class which adds some functionality to be used in the component.</p>
+            <div class="image-ctr">
+                <img src="./images/03.PNG" alt="img">
+            </div>
+        </li>
+        <li>
+            <p>Next we will work on our ts component file. In it we design what our component will do. In this case it will use the class from game.ts file to create array of games data and we will use the data to show how *ngFor works. Here is how our ts component file should look for this example:</p>
+            <div class="image-ctr">
+                <img src="./images/04.PNG" alt="img">
+            </div>
+        </li>
+        <li>
+            <p>And now we will work in our html component file where we use *ngFor on the elements we want. As you can see we use for loop on the games array, games array is created in the constructor of our ts component file and each element in our games array is an object with properties title, publisher and price as designed in the games.ts file.</p>
+            <div class="image-ctr">
+                <img src="./images/05.PNG" alt="img">
+            </div>
+            <p>Note that we use *ngFor as property in the li element and the data binding is in the body of the element. We have 3 elements in the games array and for each we will visualize it's title property in a li tag. And our result should look like this:</p>
+            <div class="image-ctr">
+                <img src="./images/06.PNG" alt="img">
+            </div>
+        </li>
+        <li>
+            <p>Now we will use the example to also show how *ngIf works. Again in the html template we will add span element and use *ngIf in it. Note that span tag is in the li tag so span element can see the game object because game comes from games array which is in the li element</p>
+            <div class="image-ctr">
+                <img src="./images/07.PNG" alt="img">
+            </div>
+            <p>And here is visualized result. As you can see for elements where if condition is false the span element is not rendered. The orange color comes from stilizations from the component css file</p>
+            <div class="image-ctr">
+                <img src="./images/08.PNG" alt="img">
+            </div>
+        </li>
+    </ol>
+
+    <h1>Attach events examples</h1>
+    <ol>
+        <li>
+            <p>In our component html file we will add button element and will attach click event on it. We will create div element with some text and set false value for *ngIf and on click event will change the value of variable contentIsShown to true so the div element to be displayed. Here is our html component file:</p>
+            <div class="image-ctr">
+                <img src="./images/09.PNG" alt="img">
+            </div>
+            <p>And now in our ts component file in the constructor we will set variable contentIsShown to false. Then we create the function showContent which will be triggered on click event and will set contentIsShown to true after button is clicked</p>
+            <div class="image-ctr">
+                <img src="./images/10.PNG" alt="img">
+            </div>
+            <p>And here is the result after button is clicked:</p>
+            <div class="image-ctr">
+                <img src="./images/11.PNG" alt="img">
+            </div>
         </li>
     </ol>
 

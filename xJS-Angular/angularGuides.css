@@ -81,7 +81,11 @@ h2 {
 }
 
 img {
-    max-width: 500px;
+    max-width: 900px;
+}
+
+.image-ctr {
+    text-align: center;
 }
 
 footer {
