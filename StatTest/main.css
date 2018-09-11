@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Merienda:400,700');
 
 body {
-    font-family: Merienda, 'Times New Roman', Times, serif
+    font-family: Merienda, 'Times New Roman', Times, serif;
+    background-image: url('./items/back3.png');
+    background-repeat: no-repeat, repeat;
+    background-size: 100% 100%;
+    min-height: 900px;
+}
+
+section.container {
+    margin: 10% 5%;
 }
 
 table th, table td {
     border: 1px solid green;
+    background-color: white;
 }
 
 .stat-yes-red {
