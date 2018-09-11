@@ -82,6 +82,8 @@ function main() {
                 warning.css('color', 'red')
                 $('#percent-values1').addClass('error')
                 $('#percent-values2').addClass('error')
+                $('#percent-values1').val('')
+                $('#percent-values2').val('')
                 globalCheck = false
                 return
             }
@@ -111,6 +113,10 @@ function main() {
 
                 let confScore = confTable[confLevel]
 
+
+                if(drivers[i] === undefined) {
+                    drivers[i] = '<->'
+                }
 
                 let tr = $('<tr>')
                     .append($(`<td>${drivers[i]}</td>`))
@@ -142,7 +148,7 @@ function main() {
 
             
             $('table tr:odd').css('background-color', 'azure')
-            
+            $('table tr:even').css('background-color', 'white')
         }
     })
 }
