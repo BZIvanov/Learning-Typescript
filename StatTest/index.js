@@ -54,18 +54,36 @@ function main() {
             if(baseSize1 === 0) {     
                 base1.addClass('error')
                 globalCheck = false
+                $("table").remove()
+                return
             }
             if(baseSize2 === 0) {     
                 base2.addClass('error')
                 globalCheck = false
+                $("table").remove()
+                return
             }
             if(percentValues1.length === 0) {
                 $('#percent-values1').addClass('error')
                 globalCheck = false
+                $("table").remove()
+                return
             }
             if(percentValues2.length === 0) {
                 $('#percent-values2').addClass('error')
                 globalCheck = false
+                $("table").remove()
+                return
+            }
+            if(percentValues1.length !== percentValues2.length) {
+                $("#generatedTable").empty()
+                let warning = $('<div>').text("The count of values from the first column is not equal to the second column")
+                warning.appendTo("#generatedTable")
+                warning.css('color', 'red')
+                $('#percent-values1').addClass('error')
+                $('#percent-values2').addClass('error')
+                globalCheck = false
+                return
             }
 
             if(globalCheck) {
@@ -76,7 +94,7 @@ function main() {
 
         function createTable() {
             // remove table if there is one already from previous button click
-            $('table').remove()
+            $('#generatedTable').empty()
 
             let table = $('<table>')
                 .append($('<tr>')
@@ -84,8 +102,6 @@ function main() {
                     .append($(`<th>${baseSize1}</th>`))
                     .append($(`<th>${baseSize2}</th>`))
                     .append($(`<th>Result</th>`)))
-
-            $('#generatedTable').append(table)
 
             for (let i = 0; i < percentValues1.length; i++) {
 
@@ -110,15 +126,23 @@ function main() {
                     tr.append($(`<td class="stat-no"></td>`))
                 }
                 table.append(tr)
-
-
-                // clear fields at the end
-                $('#base-size1').val('')
-                $('#base-size2').val('')
-                $('#drivers').val('')
-                $('#percent-values1').val('')
-                $('#percent-values2').val('')
             }
+
+            // fade in animation
+            $('#generatedTable').css('display', 'none')
+            $('#generatedTable').append(table)
+            $('#generatedTable').fadeIn(1500)
+
+            // clear fields at the end
+            $('#base-size1').val('')
+            $('#base-size2').val('')
+            $('#drivers').val('')
+            $('#percent-values1').val('')
+            $('#percent-values2').val('')
+
+            
+            $('table tr:odd').css('background-color', 'azure')
+            
         }
     })
 }

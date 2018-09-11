@@ -14,7 +14,10 @@ section.container {
 
 table th, table td {
     border: 1px solid green;
-    background-color: white;
+}
+
+table td {
+    font-size: 0.9em;
 }
 
 .stat-yes-red {
