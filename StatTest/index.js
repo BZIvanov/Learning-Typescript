@@ -8,7 +8,10 @@ function main() {
         //get values from textArea in an array
         let percentValues1 = $('#percent-values1').val().split(/\n+/g);
         //check if file has both counts and percents values. If only percent values will return true
-        let fileType = (percentValues1[1] && percentValues1[0].indexOf('%') < 0 && percentValues1[1].indexOf('%') < 0) ? false : true
+        let fileType = false
+        if(percentValues1.length > 1) {
+            fileType = (percentValues1[0].indexOf('%') < 0 && percentValues1[1].indexOf('%') < 0) ? false : true
+        }
         //if the file contains counts and percents remove non-percent entries
         percentValues1 = fileType ? percentValues1.filter(x => x.indexOf('%') !== -1) : percentValues1
         //remove '%' sign in case there are
@@ -17,6 +20,8 @@ function main() {
         percentValues1 = percentValues1.filter(x => x !== '');
         //divide the number by 100 to have it as percent
         percentValues1 = percentValues1.map(Number).map(x => x / 100);
+
+        
         let percentValues2 = $('#percent-values2').val().split(/\n+/g);
         percentValues2 = fileType ? percentValues2.filter(x => x.indexOf('%') !== -1) : percentValues2
         percentValues2 = percentValues2.map(x => x.replace(/[^0-9.]/g, ''));
