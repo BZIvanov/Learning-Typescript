@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda:400,700');
+
+body {
+    font-family: Merienda, 'Times New Roman', Times, serif
+}
+
+table th, table td {
+    border: 1px solid green;
+}
+
+.stat-yes-red {
+    background-color: red;
+    text-align: center;
+}
+
+.stat-yes-red:before {
+    content: "\02C5";
+    margin-right: 6px;
+}
+
+.stat-yes-green {
+    background-color: green;
+    text-align: center;
+}
+
+.stat-yes-green:before {
+    content: "\02C4";
+    margin-right: 6px;
+}
+
+
+
+.stat-no {
+    background-color: white;
+    text-align: center;
+}
+
+.stat-no:before {
+    content: "\02D7";
+    margin-right: 6px;
+}
+
+.error {
+    background-color: red;
+}
+
+.container > article {
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    margin: 10px;
+}
+
+button {
+    background: radial-gradient(ellipse at center,
+     rgba(71,244,48,1) 0%,rgba(82,165,229,1) 100%);
+     color: white;
+     font-weight: bold;
+     border: 1px solid green;
+     border-radius: 20px;
+     cursor: pointer;
+     padding: 8px 25px;
+     outline: none !important;
+     text-shadow: 1px 1px 1px black;
+     font-size: 1.1em;
+     font-family: Merienda;
+}
+
+table th, table td {
+    padding: 3px;
+}
