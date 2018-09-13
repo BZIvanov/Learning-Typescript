@@ -36,10 +36,16 @@ function main() {
         // confidence level
         let confLevel = $("#confidence-level option:selected").text();
         let confTable = {
+            '60%': 0.842,
+            '70%': 1.036,
+            '80%': 1.282,
+            '85%': 1.44,
             '90%': 1.645,
             '95%': 1.96,
             '98%': 2.326,
             '99%': 2.576,
+            '99.8%': 3.091,
+            '99.9%': 3.291,
         }
         
         errorsChecker()
