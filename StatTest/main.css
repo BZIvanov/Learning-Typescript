@@ -2,14 +2,14 @@
 
 body {
     font-family: Merienda, 'Times New Roman', Times, serif;
-    background-image: url('./items/back3.png');
+    background-image: url('./items/back5.png');
     background-repeat: no-repeat, repeat;
     background-size: 100% 100%;
-    min-height: 900px;
+    min-height: 750px;
 }
 
-section.container {
-    margin: 10% 5%;
+section.all {
+    margin: 95px 5%;
 }
 
 table th, table td {
@@ -40,8 +40,6 @@ table td {
     margin-right: 6px;
 }
 
-
-
 .stat-no {
     background-color: white;
     text-align: center;
@@ -56,7 +54,11 @@ table td {
     background-color: red;
 }
 
-.container > article {
+.error::placeholder {
+    color: white;
+}
+
+.all > article {
     display: flex;
     justify-content: center;
 }
@@ -82,4 +84,29 @@ button {
 
 table th, table td {
     padding: 3px;
+}
+
+/* animations */
+
+@keyframes bottomBorder {
+    0% {
+        border-color: darkorange;
+    }
+    50% {
+        border-color: #c9e432; 
+    }
+    100% {
+        border-color: darkorange;
+    }
+}
+
+
+
+input.animatedField, textarea.animatedField {
+    border-color: #c9e432;
+    animation-name: bottomBorder;
+    animation-duration: 2s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    outline: none;
 }

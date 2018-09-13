@@ -118,7 +118,7 @@ function main() {
                 let Z = Math.abs((percentValues1[i] - percentValues2[i]) / Math.sqrt(P * Q * ((1 / baseSize1) + (1 / baseSize2))))
 
                 let confScore = confTable[confLevel]
-
+                
 
                 if(drivers[i] === undefined) {
                     drivers[i] = '<->'
@@ -153,8 +153,17 @@ function main() {
             $('#percent-values2').val('')
 
             
-            $('table tr:odd').css('background-color', 'azure')
+            $('table tr:odd').css('background-color', '#9dff002c')
             $('table tr:even').css('background-color', 'white')
         }
     })
+
+
+    $('input, textarea').on('focus', function() {
+        $(this).addClass('animatedField')
+    })
+    $('input, textarea').on('blur', function() {
+        $(this).removeClass('animatedField')
+    })
 }
+
