@@ -88,7 +88,7 @@ table th, table td {
 
 /* animations */
 
-@keyframes bottomBorder {
+@keyframes coloredBorder {
     0% {
         border-color: darkorange;
     }
@@ -100,13 +100,26 @@ table th, table td {
     }
 }
 
-
-
 input.animatedField, textarea.animatedField {
     border-color: #c9e432;
-    animation-name: bottomBorder;
+    animation-name: coloredBorder;
     animation-duration: 2s;
     animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
     outline: none;
+}
+
+@keyframes noticeIt {
+    0% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: darkorange;
+    }
+}
+
+.notice {
+    background-color: white;
+    animation-name: noticeIt;
+    animation-duration: 0.5s;
 }

@@ -126,3 +126,19 @@ input.animatedField, textarea.animatedField {
     flex-wrap: wrap;
     
 }
+
+
+@keyframes noticeIt {
+    0% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: darkorange;
+    }
+}
+
+.notice {
+    background-color: white;
+    animation-name: noticeIt;
+    animation-duration: 0.5s;
+}

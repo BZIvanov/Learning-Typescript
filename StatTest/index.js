@@ -155,6 +155,13 @@ function main() {
             
             $('table tr:odd').css('background-color', '#9dff002c')
             $('table tr:even').css('background-color', 'white')
+
+            
+            // make colorful notification for which confidence level was used
+            $('select').addClass('notice')
+            setTimeout(function() {
+                $('select').removeClass('notice')
+            }, 500)
         }
     })
 
