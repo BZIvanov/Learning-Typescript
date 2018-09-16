@@ -2,14 +2,33 @@
 
 body {
     font-family: Merienda, 'Times New Roman', Times, serif;
-    background-image: url('./items/back5.png');
-    background-repeat: no-repeat, repeat;
-    background-size: 100% 100%;
-    min-height: 750px;
+}
+
+#alt-tool {
+    display: flex;
+    justify-content: center;
+    background-color: #6a43d4da;
+}
+
+#alt-tool a {
+    text-decoration: none;
+    color: darkorange;
+    border: 1px solid darkorange;
+    padding: 2px 4px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+#alt-tool a:hover {
+    background-color: #f3eb7f;
 }
 
 section.all {
-    margin: 95px 5%;
+    padding: 52px 5%;
+    background-image: url('./items/back5.png');
+    background-repeat: no-repeat, repeat;
+    background-size: 100% 100%;
+    min-height: 700px;
 }
 
 table th, table td {
@@ -69,7 +88,7 @@ article {
 
 button {
     background: radial-gradient(ellipse at center,
-     rgba(71,244,48,1) 0%,rgba(82,165,229,1) 100%);
+     rgba(71,244,48,1) 0%,#52a5e5 100%);
      color: white;
      font-weight: bold;
      border: 1px solid green;
@@ -93,7 +112,7 @@ table th, table td {
         border-color: darkorange;
     }
     50% {
-        border-color: #c9e432; 
+        border-color: #c9e432;
     }
     100% {
         border-color: darkorange;
@@ -122,4 +141,22 @@ input.animatedField, textarea.animatedField {
     background-color: white;
     animation-name: noticeIt;
     animation-duration: 0.5s;
+}
+
+
+/* highlight low base sizes */
+@keyframes lowBase {
+    0% {
+        color: red;
+    }
+    100% {
+        color: white;
+    }
+}
+
+span.low-base {
+    color: white !important;
+    animation-name: lowBase;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }

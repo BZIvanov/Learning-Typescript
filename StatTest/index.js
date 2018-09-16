@@ -1,9 +1,7 @@
 function main() {
     $('#calculate').on('click', function () {
-
-        
-        let baseSize1 = Number($('#base-size1').val());
-        let baseSize2 = Number($('#base-size2').val());
+        let baseSize1 = Number($('#base-size1').val().replace(/\*+/g, ''));
+        let baseSize2 = Number($('#base-size2').val().replace(/\*+/g, ''));
 
         //get values from textArea in an array
         let percentValues1 = $('#percent-values1').val().split(/\n+/g);
@@ -153,7 +151,7 @@ function main() {
             $('#percent-values2').val('')
 
             
-            $('table tr:odd').css('background-color', '#9dff002c')
+            $('table tr:odd').css('background-color', '#eeeeee')
             $('table tr:even').css('background-color', 'white')
 
             
@@ -162,6 +160,19 @@ function main() {
             setTimeout(function() {
                 $('select').removeClass('notice')
             }, 500)
+
+            // mark low base sizes
+            let baseSizeRowTD = $('table tr:eq(0)').children().toArray()
+            for(let st = 1; st < baseSizeRowTD.length - 1; st++) {
+                let currBase = baseSizeRowTD[st].textContent
+                if (currBase < 30) {
+                    $(baseSizeRowTD[st]).append(`<span class="low-base">**</span>`)
+                } else if (currBase < 50) {
+                    $(baseSizeRowTD[st]).append(`<span class="low-base">*</span>`)
+                } else {
+                    continue
+                }
+            }
         }
     })
 
