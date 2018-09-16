@@ -234,7 +234,7 @@ function main() {
 
             // mark low base sizes
             let baseSizeRowTD = $('table tr:eq(0)').children().toArray()
-            for(let st = 1; st < baseSizeRowTD.length - 1; st++) {
+            for(let st = 1; st < baseSizeRowTD.length; st++) {
                 let currBase = baseSizeRowTD[st].textContent
                 if (currBase < 30) {
                     $(baseSizeRowTD[st]).append(`<span class="low-base">**</span>`)
