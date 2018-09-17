@@ -221,7 +221,7 @@ function main() {
             $('#drivers').val('')
             $('textarea').val('')
             
-            $('table tr:odd').css('background-color', '#9dff002c')
+            $('table tr:odd').css('background-color', '#eeeeee')
             $('table tr:even').css('background-color', 'white')
 
             // make colorful notification for which confidence level was used
