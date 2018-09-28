@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    text-align: center;
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
+    background-color: rgb(132, 190, 243);
+}
+
+
+.objective {
+    border: 1px solid rgb(20, 3, 27);
+    border-radius: 10px;
+    margin: 0 10%;
+    overflow: hidden;
+}
+
+.explanation {
+    border-top: 1px dotted black;
+}
+
+.code {
+    border: 1px solid rgb(20, 3, 27);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.question {
+    padding: 0px 10px;
+    color: rgb(38, 42, 48);
+}
+
+.free-text {
+    padding: 0px 10px;
+    font-size: 1.1em;
+}
+
+.syntax {
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    background-color: rgb(14, 48, 8);
+    color: rgb(216, 224, 231);
+    margin: 0px;
+}
+
+.result {
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    background-color: rgb(31, 99, 14);
+    color: rgb(216, 224, 231);
+    margin: 0px;
+}
+
+
+/* text colors for texts in codes */
+.brown {
+    color: rgb(204, 117, 117);
+}
+
+
+/* background-colors for texts in codes */
+.light-blue {
+    background-color: rgb(81, 163, 245);
+    padding: 1px;
+}
+
+span.light-blue {
+    border: 1px transparent;
+    border-radius: 2px;
+}
