@@ -173,15 +173,28 @@ function main() {
                     continue
                 }
             }
+
+            confidenceNotificationBox(confLevel);
         }
     })
 
 
     $('input, textarea').on('focus', function() {
-        $(this).addClass('animatedField')
+        $(this).addClass('animatedField');
     })
     $('input, textarea').on('blur', function() {
-        $(this).removeClass('animatedField')
+        $(this).removeClass('animatedField');
     })
+
+    function confidenceNotificationBox(confidenceLevel) {
+        let box = $("#confidenceNotification");
+        let level = $("#confidenceNotification span");
+        box.css("display", "block");
+        level.text(`${confidenceLevel}`)
+        
+        setTimeout(function() {
+            box.fadeOut("slow");
+        }, 2000)
+    }
 }
 
