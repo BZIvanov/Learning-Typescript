@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $("#create").click(function() {
         
-        checker();
+        //checker();
     
         let firstItem = $("#first").val();
         let secondItem = $("#second").val();
