@@ -43,12 +43,12 @@ $(document).ready(function() {
     })
 
     //check if dot is added for tag with dot. If not remove cells content on others
-    function checker() {
-        if ($("#forth").val() != ".") {
-            $("#fifth").val("");
-            $("#dotStep").val("");
-        }
-    }
+//     function checker() {
+//         if ($("#forth").val() != ".") {
+//             $("#fifth").val("");
+//             $("#dotStep").val("");
+//         }
+//     }
 
     //when clicked the textarea automatically select the text in textarea and copy it
     $("#result").focus(function() {
