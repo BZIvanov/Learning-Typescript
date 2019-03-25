@@ -144,11 +144,11 @@ function main() {
             $('#generatedTable').fadeIn(1500)
 
             // clear fields at the end
-            $('#base-size1').val('')
-            $('#base-size2').val('')
-            $('#drivers').val('')
-            $('#percent-values1').val('')
-            $('#percent-values2').val('')
+            //$('#base-size1').val('')
+            //$('#base-size2').val('')
+            //$('#drivers').val('')
+            //$('#percent-values1').val('')
+            //$('#percent-values2').val('')
 
             
             $('table tr:odd').css('background-color', '#eeeeee')
