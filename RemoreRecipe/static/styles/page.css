@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Pangolin, Verdana, Geneva, Tahoma, sans-serif;
+    color: darkslategrey;
+    text-shadow: 0px 0px 20px lightsteelblue;
+    text-align: center;
+    background-image: url("../images/patt.jpg");
+    position: relative;
+}
+
+.welcome {
+    margin-top: 200px;
+}
+
+main {
+    min-height: 500px;
+}

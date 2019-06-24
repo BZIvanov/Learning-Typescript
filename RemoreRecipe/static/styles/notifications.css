@@ -1,0 +1,5 @@
+#success, #info, #danger {
+    position: fixed;
+    top: 5%;
+    left: 70%;
+}

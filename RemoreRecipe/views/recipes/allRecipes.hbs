@@ -1,0 +1,47 @@
+{{> navigation}}
+
+<main>
+    {{#if isLogged}}
+        <section class="items">
+            <h1>Recipes</h1>
+    
+            <section id="recipeList" class="row">
+                {{#each recipes}}
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <article class="recipe">
+                            {{#if isMine}}
+                                <div class="title myRecipe">
+                                    <h3>{{name}}</h3>
+                                </div>
+                            {{else}}
+                                <div class="title">
+                                    <h3>{{name}}</h3>
+                                </div>
+                            {{/if}}
+                            
+                            <h5>{{category}}</h5>
+                            <a href="#/recipe-details/{{_id}}">
+                                <img src="{{imageUrl}}" alt="Oops {{name}} image was not found!">
+                            </a>
+                            <div class="description">
+                                <p >{{description}}</p>
+                            </div>
+                            <p id="likes">
+                                <a href="#/recipes/like/{{_id}}">
+                                    <span class="heart"></span> {{likes}}
+                                </a>
+                            </p>
+                        </article>
+                    </div>
+                {{/each}}
+            </section>
+        </section>
+    {{else}}
+        <section class="welcome">
+            <h1>Welcome to the Recipes Book</h1>
+            <p>Login or Register to see the recipes</p>
+        </section>
+    {{/if}}
+</main>
+
+{{> footer}}
