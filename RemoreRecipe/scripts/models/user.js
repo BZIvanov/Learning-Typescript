@@ -1,4 +1,6 @@
+// object holding authentication related functions and the error handler which will in case error occurs in any of the other functions
 let servicer = (() => {
+    // this function will save the data from the response to the localStorage which is needed to further manage the user rights
     function saveSession(userInfo) {
         let userAuth = userInfo._kmd.authtoken;
         localStorage.setItem('authtoken', userAuth);
@@ -7,7 +9,7 @@ let servicer = (() => {
         let username = userInfo.username;
         localStorage.setItem('username', username);
     }
-
+    
     function login(username, password) {
         let userData = {
             username,

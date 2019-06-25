@@ -24,7 +24,7 @@
                     <h4>Ingredients:</h4>
                     {{#each ingredients}}
                         <div>
-                            <button class="ingredient"><i class="fas fa-check"></i> {{this}}</button>
+                            <button class="ingredient" onclick="interact.mark(event)"><i class="fas fa-check"></i> {{this}}</button>
                         </div>
                      {{/each}}
                 </article>
