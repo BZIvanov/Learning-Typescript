@@ -33,6 +33,7 @@ $(() => {
         this.get('#/recipes/like/:id', controllers.actionsController.likeRecipe);
         
         this.get('#/search', controllers.actionsController.searchRecipes);
+        this.get('#/filterCategory', controllers.actionsController.filterRecipes);
     });
 
     app.run();
