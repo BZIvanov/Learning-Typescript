@@ -163,5 +163,52 @@ controllers.actionsController = {
                 this.partial('./views/recipes/allRecipes.hbs');
             });
         }
-    }
+    },
+    sortRecipes: function(context) {
+        let order = context.params.sortOrder;
+
+        if (localStorage.getItem('authtoken') !== null) {
+            let endpoint = 'recipes';
+            requester.get('appdata', endpoint, 'kinvey')
+            .then(function(response) {
+                context.recipes = response['data'];
+                context.recipes = context.recipes.sort((a, b) => {
+                    if (order === "Ascending") {
+                        return a.name.localeCompare(b.name);
+                    } else if (order === "Descending") {
+                        return b.name.localeCompare(a.name);
+                    }
+                });
+                
+                context.recipes = context.recipes.map(r => {
+                    if (localStorage.getItem('userId') == r._acl.creator) {
+                        r.isMine = true;
+                    }
+                    return r;
+                });
+
+                context.recipes = context.recipes.map(r => {
+                    if (r.description.length > 90) {
+                        r.description = r.description.substring(0, 90) + "...";
+                        return r;
+                    }
+                    return r;
+                })
+                
+                context.loadPartials({
+                    navigation: './views/common/navigation.hbs',
+                    footer: './views/common/footer.hbs'
+                }).then(function() {
+                    this.partial('./views/recipes/allRecipes.hbs');
+                });  
+            }).catch(servicer.handleError);
+        } else {
+            context.loadPartials({
+                navigation: './views/common/navigation.hbs',
+                footer: './views/common/footer.hbs'
+            }).then(function() {
+                this.partial('./views/recipes/allRecipes.hbs');
+            });
+        }
+    },
 }
