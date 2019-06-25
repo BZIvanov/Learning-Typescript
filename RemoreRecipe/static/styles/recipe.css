@@ -76,3 +76,7 @@
 .marked {
     background-color: green;
 }
+
+#nothingFound {
+    margin-top: 30px;
+}
