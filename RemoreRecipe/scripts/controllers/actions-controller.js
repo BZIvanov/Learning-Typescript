@@ -67,5 +67,53 @@ controllers.actionsController = {
                         context.redirect('#/home')
                     }).catch(servicer.handleError);
             }).catch(servicer.handleError);
+    },
+    searchRecipes: function(context) {
+        let searchedItem = context.params.searchedItem;
+
+        if (localStorage.getItem('authtoken') !== null) {
+            let endpoint = 'recipes';
+            requester.get('appdata', endpoint, 'kinvey')
+            .then(function(response) {
+                context.recipes = response['data'];
+                
+                context.recipes = context.recipes.filter(el => {
+                    return el.name.toLowerCase().indexOf(searchedItem.toLowerCase()) !== -1;
+                })
+                
+                context.recipes = context.recipes.map(r => {
+                    if (localStorage.getItem('userId') == r._acl.creator) {
+                        r.isMine = true;
+                    }
+                    return r;
+                });
+
+                context.recipes = context.recipes.sort((a, b) => {
+                    return +b.likes - +a.likes;
+                });
+
+                context.recipes = context.recipes.map(r => {
+                    if (r.description.length > 90) {
+                        r.description = r.description.substring(0, 90) + "...";
+                        return r;
+                    }
+                    return r;
+                })
+                
+                context.loadPartials({
+                    navigation: './views/common/navigation.hbs',
+                    footer: './views/common/footer.hbs'
+                }).then(function() {
+                    this.partial('./views/recipes/allRecipes.hbs');
+                });  
+            }).catch(servicer.handleError);
+        } else {
+            context.loadPartials({
+                navigation: './views/common/navigation.hbs',
+                footer: './views/common/footer.hbs'
+            }).then(function() {
+                this.partial('./views/recipes/allRecipes.hbs');
+            });
+        }
     }
 }
