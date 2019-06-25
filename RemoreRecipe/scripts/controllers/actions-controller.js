@@ -1,3 +1,4 @@
+// object holding function which are managing actions related to the recipes
 controllers.actionsController = {
     displayEditView: function(context) {
         let id = context.params.id.substring(1);

@@ -1,3 +1,4 @@
+// object holding function related to authentication process
 controllers.authController = {
     displayLoginView: function(context) {
         context.loadPartials({

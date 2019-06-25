@@ -1,3 +1,4 @@
+// object holding functions related to page navigations
 controllers.pageController = {
     displayHomeView: function(context) {
         if (localStorage.getItem('authtoken') !== null) {
@@ -5,9 +6,7 @@ controllers.pageController = {
             requester.get('appdata', endpoint, 'kinvey')
             .then(function(response) {
                 context.recipes = response['data'];
-                // context.recipes = context.recipes.filter((el) => {
-                //     return localStorage.getItem('userId') !== el._acl.creator;
-                // });
+                
                 context.recipes = context.recipes.map(r => {
                     if (localStorage.getItem('userId') == r._acl.creator) {
                         r.isMine = true;
