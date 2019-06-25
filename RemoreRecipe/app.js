@@ -34,6 +34,7 @@ $(() => {
         
         this.get('#/search', controllers.actionsController.searchRecipes);
         this.get('#/filterCategory', controllers.actionsController.filterRecipes);
+        this.get('#/sortItems', controllers.actionsController.sortRecipes);
     });
 
     app.run();
