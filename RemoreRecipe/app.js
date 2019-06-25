@@ -31,6 +31,8 @@ $(() => {
         this.get('#/deleteRecipe/:id', controllers.actionsController.displayDeleteView);
         this.post('#/deleteRecipe/:id', controllers.actionsController.deleteRecipe);
         this.get('#/recipes/like/:id', controllers.actionsController.likeRecipe);
+        
+        this.get('#/search', controllers.actionsController.searchRecipes);
     });
 
     app.run();
