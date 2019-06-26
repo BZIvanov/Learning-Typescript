@@ -27,3 +27,12 @@
 #logo {
     font-size: 2em;
 }
+
+li.greet {
+    color: rgb(39, 103, 163);
+    font-size: 1.1em;
+}
+
+.username {
+    font-weight: bold;
+}
