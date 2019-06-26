@@ -28,6 +28,9 @@ controllers.pageController = {
                 
                 context.loadPartials({
                     navigation: './views/common/navigation.hbs',
+                    search: './views/filters/search.hbs',
+                    category: './views/filters/category.hbs',
+                    sort: './views/filters/sort.hbs',
                     footer: './views/common/footer.hbs'
                 }).then(function() {
                     this.partial('./views/recipes/allRecipes.hbs');
