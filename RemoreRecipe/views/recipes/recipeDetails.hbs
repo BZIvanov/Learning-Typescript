@@ -3,13 +3,15 @@
 <main>
     {{#if isLogged}}
         <section class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12"></div>
+            <div class="col-lg-4 col-md-3 col-sm-0"></div>
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <article class="recipe">
-                    <h3>{{name}}</h3>
+                    <div class="title">
+                        <h3>{{name}}</h3>
+                    </div>
                     <h5>{{category}}</h5>
-                    <img src="{{imageUrl}}" alt="Oops {{name}} image was not found!">
-                    <p>{{description}}</p>
+                    <img src="{{imageUrl}}" alt="Oops image was not found!">
+                    <p class="description">{{description}}</p>
 
                     {{#if isOwner}}
                         <div id="controls">
@@ -23,13 +25,13 @@
                 <article id="ingredients">
                     <h4>Ingredients:</h4>
                     {{#each ingredients}}
-                        <div>
+                        <div class="d-flex justify-content-center nana">
                             <button class="ingredient" onclick="interact.mark(event)"><i class="fas fa-check"></i> {{this}}</button>
                         </div>
                      {{/each}}
                 </article>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12"></div>
+            <div class="col-lg-4 col-md-3 col-sm-0"></div>
         </section>
     {{else}}
         <section>
