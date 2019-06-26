@@ -31,6 +31,7 @@
 .title {
     padding-top: 10px;
     min-height: 70px;
+    word-wrap: break-word;
 }
 
 .myRecipe {
@@ -40,6 +41,7 @@
 .description {
     padding-top: 15px;
     min-height: 70px;
+    word-wrap: break-word;
 }
 
 .heart {
@@ -80,3 +82,4 @@
 #nothingFound {
     margin-top: 30px;
 }
+
