@@ -92,8 +92,8 @@ controllers.pageController = {
             notify.showInfo("Recipe name should be 3-30 characters length", "danger");
         } else if (description.length > 500) {
             notify.showInfo("Description field should be maximum 500 characters length", "danger");
-        } else if (imageUrl. length < 20 || imageUrl.length > 100) {
-            notify.showInfo("Image URL field should be 20-100 characters length", "danger");
+        } else if (imageUrl. length < 20 || imageUrl.length > 150) {
+            notify.showInfo("Image URL field should be 20-150 characters length", "danger");
         } else if (ingredients. length < 20 || ingredients.length > 500) {
             notify.showInfo("Ingredients field should be 20-500 characters length", "danger");
         } else {
