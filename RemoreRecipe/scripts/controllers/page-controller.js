@@ -87,11 +87,57 @@ controllers.pageController = {
         let likes = 0;
     
         let data = { name, description, imageUrl, category, ingredients, likes };
-        
-        requester.post('appdata', 'recipes', 'kinvey', data)
-            .then(function(response) {
-                notify.showInfo("Successfully added a new recipe", "success");
-                context.redirect('#/home');
-            }).catch(servicer.handleError);
+
+        if (name. length < 3 || name.length > 30) {
+            notify.showInfo("Recipe name should be 3-30 characters length", "danger");
+        } else if (description.length > 500) {
+            notify.showInfo("Description field should be maximum 500 characters length", "danger");
+        } else if (imageUrl. length < 20 || imageUrl.length > 100) {
+            notify.showInfo("Image URL field should be 20-100 characters length", "danger");
+        } else if (ingredients. length < 20 || ingredients.length > 500) {
+            notify.showInfo("Ingredients field should be 20-500 characters length", "danger");
+        } else {
+            requester.post('appdata', 'recipes', 'kinvey', data)
+                .then(function(response) {
+                    notify.showInfo("Successfully added a new recipe", "success");
+                    context.redirect('#/home');
+                }).catch(servicer.handleError);
+        }
+    },
+    randomRecipe: function(context) {
+        if (localStorage.getItem('authtoken') !== null) {
+            requester.get('appdata', 'recipes', 'kinvey')
+                .then(function(response) {
+                    let randomRecipe = response['data'][Math.floor(Math.random() * response['data'].length)];
+
+                    context.name = randomRecipe.name;
+                    context.description = randomRecipe.description;
+                    context.imageUrl = randomRecipe.imageUrl;
+                    context.category = randomRecipe.category;
+                    context.likes = randomRecipe.likes;
+                    context.id = randomRecipe._id;
+                    context.isOwner = context.currentUser === randomRecipe._acl.creator;
+                    context.ingredients = (randomRecipe.ingredients || "")
+                        .split(";")
+                        .map(x => x.trim())
+                        .filter(y => y !== "");
+
+                    this.random = Math.random() * 100;
+            
+                    context.loadPartials({
+                        navigation: './views/common/navigation.hbs',
+                        footer: './views/common/footer.hbs'
+                    }).then(function() {
+                        this.partial('./views/recipes/recipeDetails.hbs');
+                    });
+                }).catch(servicer.handleError);
+        } else {
+            context.loadPartials({
+                navigation: './views/common/navigation.hbs',
+                footer: './views/common/footer.hbs'
+            }).then(function() {
+                this.partial('./views/recipes/allRecipes.hbs');
+            });
+        } 
     }
 }

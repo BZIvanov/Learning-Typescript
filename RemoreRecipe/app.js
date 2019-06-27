@@ -9,6 +9,7 @@ $(() => {
             this.isLogged = localStorage.getItem('authtoken') !== null;
             this.myself = localStorage.getItem('username');
             this.currentUser = localStorage.getItem('userId');
+            this.random = Math.random() * 100;
         });
 
         // home routes
@@ -35,6 +36,7 @@ $(() => {
         this.get('#/search', controllers.actionsController.searchRecipes);
         this.get('#/filterCategory', controllers.actionsController.filterRecipes);
         this.get('#/sortItems', controllers.actionsController.sortRecipes);
+        this.get('#/randomRecipe/:rand', controllers.pageController.randomRecipe);
     });
 
     app.run();
