@@ -88,14 +88,14 @@ controllers.pageController = {
     
         let data = { name, description, imageUrl, category, ingredients, likes };
 
-        if (name. length < 3 || name.length > 30) {
-            notify.showInfo("Recipe name should be 3-30 characters length", "danger");
-        } else if (description.length > 500) {
-            notify.showInfo("Description field should be maximum 500 characters length", "danger");
-        } else if (imageUrl. length < 20 || imageUrl.length > 150) {
-            notify.showInfo("Image URL field should be 20-150 characters length", "danger");
-        } else if (ingredients. length < 20 || ingredients.length > 500) {
-            notify.showInfo("Ingredients field should be 20-500 characters length", "danger");
+        if (name. length < 3 || name.length > 45) {
+            notify.showInfo("Recipe name should be 3-45 characters length", "danger");
+        } else if (description.length > 1500) {
+            notify.showInfo("Description field should be maximum 1500 characters length", "danger");
+        } else if (imageUrl. length < 20 || imageUrl.length > 200) {
+            notify.showInfo("Image URL field should be 20-200 characters length", "danger");
+        } else if (ingredients. length < 20 || ingredients.length > 1000) {
+            notify.showInfo("Ingredients field should be 20-1000 characters length", "danger");
         } else {
             requester.post('appdata', 'recipes', 'kinvey', data)
                 .then(function(response) {
