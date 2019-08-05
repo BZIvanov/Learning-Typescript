@@ -49,13 +49,22 @@ function main() {
 
             for(let i = 0; i < numberOfBrands; i++) {
                 let percents = transposed[i]
-    
+                console.log(percents)
                 if(percents.length > 1 && i == 0) {
                     typeOfFile = (percents[0].indexOf('%') < 0 && percents[1].indexOf('%') < 0) ? false : true
                 }
                 percents = typeOfFile ? percents.filter(x => x.indexOf('%') !== -1) : percents
     
-                percents = percents.map(x => x.replace(/[^0-9.]/g, ''));
+                // replace '-' with -1
+                percents = percents.map(x => {
+
+                    // x = x.trim();
+                    // if (x === '-') {
+                    //     return -1;
+                    // }
+                    return x;
+                });
+                percents = percents.map(x => x.replace(/[^0-9.\-]/g, ''));
                 percents = percents.filter(x => x !== '');
                 percents = percents.map(Number).map(x => x / 100);
                 percentValues.push(percents)
