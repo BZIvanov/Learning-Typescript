@@ -1,0 +1,36 @@
+<header class="navigation">
+    <nav>
+        <ul>
+            <li id="logo">
+                <a href="#/home">Recipes Book</a>
+            </li>
+            {{#if isLogged}}
+                <li>
+                    <a href="#/addRecipe">New recipe</a>
+                </li>
+                <li>
+                    <a href="#/randomRecipe/{{random}}">Random recipe</a>
+                </li>
+            {{/if}}
+        </ul>
+
+        <ul>
+            {{#unless isLogged}}
+                <li>
+                    <a href="#/login">Login</a>
+                </li>
+                <li>
+                    <a href="#/register">Register</a>
+                </li>
+            {{else}}
+                <li class="greet">
+                    Hello <span class="username">{{ myself }}</span> !
+                </li>
+                <li>
+                    <a href="#/logout">Logout</a>
+                </li>
+            {{/unless}}
+        </ul>
+    </nav>
+    <hr>
+</header>
