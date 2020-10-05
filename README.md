@@ -1,2 +1,1 @@
-# BZIvanov.github.io
-web-site
+# README
