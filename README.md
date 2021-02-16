@@ -1,3 +1,3 @@
 # README
 
-develop 2
+latest
