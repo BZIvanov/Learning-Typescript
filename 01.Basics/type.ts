@@ -24,3 +24,17 @@ function printIt(value: funcInput) {
 }
 
 console.log(printIt('Hello'));
+
+// EXAMPLE 3
+
+// optional parameters, with questionmark we can specify something as optional
+type Employee = { name: string; position: string; income?: number };
+const myEmployee: Employee = { name: 'Iva', position: 'Marketing' };
+
+// EXAMPLE 4
+
+// this way we can create array of only specific values allowed
+type Food = 'apple' | 'cake' | 'soup';
+type DeliciousFoods = Food[];
+
+const foods: DeliciousFoods = ['apple', 'cake'];
