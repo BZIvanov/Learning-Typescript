@@ -14,8 +14,10 @@ abstract class Employee {
 
   public work(): void {
     const currentTask = this.tasks.shift();
-    this.tasks.push(currentTask);
-    console.log(this.name + currentTask);
+    if (currentTask) {
+      this.tasks.push(currentTask);
+      console.log(this.name + currentTask);
+    }
   }
 
   public collectSalary(): void {
