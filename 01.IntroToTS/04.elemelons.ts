@@ -9,7 +9,7 @@ abstract class Melon {
 }
 
 class Watermelon extends Melon {
-  public element: string = "Water";
+  public element: string = 'Water';
 
   constructor(weight: number, melonSort: string) {
     super(weight, melonSort);
@@ -21,12 +21,12 @@ class Watermelon extends Melon {
 
   toString(): string {
     // elementIndex is getter and we call it as object property not as function
-    return `Element: ${this.element}\nSort: ${this.melonSort}\nElement Index: ${this.elementIndex}`
+    return `Element: ${this.element}\nSort: ${this.melonSort}\nElement Index: ${this.elementIndex}`;
   }
 }
 
 class Firemelon extends Melon {
-  public element: string = "Fire";
+  public element: string = 'Fire';
 
   constructor(weight: number, melonSort: string) {
     super(weight, melonSort);
@@ -37,12 +37,12 @@ class Firemelon extends Melon {
   }
 
   toString(): string {
-    return `Element: ${this.element}\nSort: ${this.melonSort}\nElement Index: ${this.elementIndex}`
+    return `Element: ${this.element}\nSort: ${this.melonSort}\nElement Index: ${this.elementIndex}`;
   }
 }
 
 class Earthmelon extends Melon {
-  public element: string = "Earth";
+  public element: string = 'Earth';
 
   constructor(weight: number, melonSort: string) {
     super(weight, melonSort);
@@ -53,12 +53,12 @@ class Earthmelon extends Melon {
   }
 
   toString(): string {
-    return `Element: ${this.element}\nSort: ${this.melonSort}\nElement Index: ${this.elementIndex}`
+    return `Element: ${this.element}\nSort: ${this.melonSort}\nElement Index: ${this.elementIndex}`;
   }
 }
 
 class Airmelon extends Melon {
-  public element: string = "Air";
+  public element: string = 'Air';
 
   constructor(weight: number, melonSort: string) {
     super(weight, melonSort);
@@ -69,7 +69,7 @@ class Airmelon extends Melon {
   }
 
   toString(): string {
-    return `Element: ${this.element}\nSort: ${this.melonSort}\nElement Index: ${this.elementIndex}`
+    return `Element: ${this.element}\nSort: ${this.melonSort}\nElement Index: ${this.elementIndex}`;
   }
 }
 
@@ -84,13 +84,15 @@ class Melolemonmelon extends Watermelon {
   }
 
   morph(): void {
-    let current = this._elements.shift();
-    this.element = current;
-    this._elements.push(current);
+    const current = this._elements.shift();
+    if (current) {
+      this.element = current;
+      this._elements.push(current);
+    }
   }
 }
 
-let watermelon: Watermelon = new Watermelon(12.5, "Kingsize");
+const watermelon: Watermelon = new Watermelon(12.5, 'Kingsize');
 console.log(watermelon.toString());
 
 // if you get accessors error for ES version run with this command: 'tsc --target es6 yourFileName.ts'

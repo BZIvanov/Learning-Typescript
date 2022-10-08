@@ -1,3 +1,5 @@
+// EXAMPLE 1:
+
 enum GenderOptions {
   MALE,
   FEMALE,
@@ -12,3 +14,12 @@ function printCity(city: string, gender: GenderOptions) {
 }
 
 printCity('Sofia', GenderOptions.MALE);
+
+// EXAMPLE 2:
+
+enum Sizes {
+  Small = 1,
+  Medium = 2,
+  Large = 3,
+}
+const screenSize: number = Sizes.Large;
