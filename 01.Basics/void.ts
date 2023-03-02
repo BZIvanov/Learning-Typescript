@@ -4,3 +4,6 @@ function printName(name: string): void {
 }
 
 printName('Iva');
+
+// we can set void type if the variable is undefined, for other types we will get an error
+let something: void = undefined;

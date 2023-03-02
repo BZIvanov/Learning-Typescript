@@ -38,3 +38,34 @@ type Food = 'apple' | 'cake' | 'soup';
 type DeliciousFoods = Food[];
 
 const foods: DeliciousFoods = ['apple', 'cake'];
+
+// EXAMPLE 5 - recursive types
+
+type NumberArrays = number | NumberArrays[];
+
+const numbers: NumberArrays = 5;
+const moreNumbers: NumberArrays = [5, [2, 3, [4, 5]], 1];
+
+// EXAMPLE 6 - intersection types
+
+type CustomerDetails = { id: number; name: string; location: string };
+
+type CustomerPrimaryAction = { purchase(): void };
+
+type CustomerSecondaryAction = { order(): void };
+
+type Customer = CustomerDetails &
+  CustomerPrimaryAction &
+  CustomerSecondaryAction;
+
+const myCustomer: Customer = {
+  id: 1,
+  name: 'Customer',
+  location: 'Sofia',
+  purchase() {
+    console.log('made purchase');
+  },
+  order() {
+    console.log('made order');
+  },
+};
