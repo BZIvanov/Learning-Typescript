@@ -1,7 +1,7 @@
 // example A
 
 interface BasicUser {
-  id: number;
+  readonly id: number;
   name: string;
   city?: string;
 }
@@ -22,11 +22,25 @@ const admin: PermissionedUser = {
   permissions: ['read', 'write'],
 };
 
-// example B
+// example B - augmented interface
 
-// string is default generic type
+// augmenting interfaces means, that if we have 2 with the same name they will be merged
+interface Product {
+  name: string;
+  price: number;
+}
+
+interface Product {
+  rating: number;
+}
+
+const myFavProduct: Product = { name: 'Laptop', price: 1000, rating: 3 };
+
+// example C
+
+// string is default generic type, providing default type is not required
 interface CompanyEmployee<A = string> {
-  id: number;
+  readonly id: number;
   name: string;
   benefits: A;
 }

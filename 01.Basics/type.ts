@@ -69,3 +69,14 @@ const myCustomer: Customer = {
     console.log('made order');
   },
 };
+
+// EXAMPLE 7 index signatures
+
+type Inventory = {
+  [k: string]: number;
+};
+
+const myInventory: Inventory = {
+  'Item 1': 31,
+  'Item 2': 45,
+};
