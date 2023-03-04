@@ -1,5 +1,7 @@
 // Example A
 
+// we can use readonly not for 'interface' only, but also 'type' for example
+
 interface Person {
   readonly name: string;
   city: string;

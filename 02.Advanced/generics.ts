@@ -17,3 +17,23 @@ const printValueLength = <T extends { length: number }>(value: T): number => {
 
 printValueLength('Hello');
 printValueLength([1, 2, 3]);
+
+// function declaration example
+function getItem<T>(list: Array<T>): T {
+  return list[0];
+}
+
+const firstItem = getItem<number>([1, 2, 3]);
+
+// object type example
+type Book<T, K> = {
+  author: T;
+  title: T;
+  year: K;
+};
+
+const myBook: Book<string, number> = {
+  author: 'Me',
+  title: 'My book',
+  year: 2023,
+};
