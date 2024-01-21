@@ -24,10 +24,12 @@ In case you get ES version error, run with the below command. This can happen if
 tsc --target es6 my-file.ts
 ```
 
+---
+
 Or alternatively you could run the below command to execute ts file without needing to install typescript
 
 ```
-npx tsc
+npx tsc my-file.ts
 ```
 
 ## Creating configuration file
