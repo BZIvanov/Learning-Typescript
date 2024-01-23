@@ -1,6 +1,10 @@
-import React from 'react';
+import { type ReactNode } from 'react';
 
-const EmphasizedText = ({ children }: { children: React.ReactNode }) => {
+type EmphasizedTextProps = {
+  children: ReactNode;
+};
+
+const EmphasizedText = ({ children }: EmphasizedTextProps) => {
   return <em style={{ color: 'green' }}>{children}</em>;
 };
 
