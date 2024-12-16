@@ -1,8 +1,9 @@
-import Post from './Post';
+import { type FC } from "react";
+import Post from "./Post";
 
-const App = () => {
+const App: FC = () => {
   return (
-    <Post title='Hello' description='My Post'>
+    <Post title="Hello" description="My Post">
       <button>Remove</button>
     </Post>
   );

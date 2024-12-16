@@ -1,14 +1,15 @@
-import CustomText from './components/CustomText';
-import EmphasizedText from './components/EmphasizedText';
+import { type FC } from "react";
+import CustomText from "./components/CustomText";
+import EmphasizedText from "./components/EmphasizedText";
 
-const App = () => {
+const App: FC = () => {
   return (
     <div>
       <CustomText>Default Props</CustomText>
 
-      <CustomText as='h2'>Valid html tag</CustomText>
+      <CustomText as="h2">Valid html tag</CustomText>
 
-      <CustomText as='a' href='https://google.com' target='_blank'>
+      <CustomText as="a" href="https://google.com" target="_blank">
         Valid combination between html tag and attributes for the tag
       </CustomText>
 

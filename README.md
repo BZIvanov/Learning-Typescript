@@ -39,3 +39,7 @@ Run the below command to create configuration file for your project:
 ```
 tsc --init
 ```
+
+## Playground
+
+Use the ts playground on the official website to preview how ts works under the hood.

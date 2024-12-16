@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type FC, useState } from "react";
 
 type Todo = {
   id: number;
@@ -6,7 +6,7 @@ type Todo = {
   description: string;
 };
 
-const App = () => {
+const App: FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const handleAddTodo = () => {

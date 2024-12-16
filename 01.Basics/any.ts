@@ -2,5 +2,5 @@
 // it is useful for cases, when something could be anything
 let password: any;
 
-password = '12345';
-password = 'secret';
+password = "12345";
+password = 12345;

@@ -1,3 +1,11 @@
+// EXAMPLE 1
+function printAge(personInfo: { name: string; age: number }): void {
+  console.log(`${personInfo.name} is ${personInfo.age} years old.`);
+}
+
+printAge({ name: "John", age: 24 });
+
+// EXAMPLE 2
 // here we will have array of objects
 const myList: { value: number; printValue: () => void }[] = [];
 
