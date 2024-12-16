@@ -1,4 +1,4 @@
-// Example A
+// EXAMPLE 1
 
 // we can use readonly not for 'interface' only, but also 'type' for example
 
@@ -9,14 +9,14 @@ interface Person {
 }
 
 const p: Person = {
-  name: 'Iva',
-  city: 'Sofia',
+  name: "Iva",
+  city: "Sofia",
 };
 
 // name is specified as readonly and now we are not allowed to change it
 // p.name = 'Eli';
 
-// Example B
+// EXAMPLE 2
 
 interface Hobby {
   location: string;
@@ -27,7 +27,7 @@ interface Hobby {
 type HobbyRO = Readonly<Hobby>;
 
 const h: HobbyRO = {
-  location: 'bul. Bulgaria',
+  location: "bul. Bulgaria",
   workingDays: 7,
 };
 

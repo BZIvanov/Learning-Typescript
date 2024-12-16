@@ -1,11 +1,18 @@
 // EXAMPLE 1
+const person: { name: string; age: number } = { name: "John", age: 24 };
+
+// EXAMPLE 2
 function printAge(personInfo: { name: string; age: number }): void {
   console.log(`${personInfo.name} is ${personInfo.age} years old.`);
 }
 
 printAge({ name: "John", age: 24 });
 
-// EXAMPLE 2
+// EXAMPLE 3
+// the below example will result in ts error for not known property city
+// printAge({ name: "John", age: 24, city: "Sofia" });
+
+// EXAMPLE 4
 // here we will have array of objects
 const myList: { value: number; printValue: () => void }[] = [];
 
