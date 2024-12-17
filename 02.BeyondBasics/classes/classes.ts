@@ -20,10 +20,7 @@ console.log(myData);
 
 class ReqData {
   // alternative syntax is instead of specifying the fields in the class to specify them in the constructor
-  constructor(public method: string, public uri: string) {
-    this.method = method;
-    this.uri = uri;
-  }
+  constructor(public readonly method: string, public readonly uri: string) {}
 }
 
 const moreData = new ReqData("POST", "http://google.com");

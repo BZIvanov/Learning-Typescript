@@ -1,12 +1,14 @@
 class Box<T> {
   private _boxes: Array<T> = [];
 
-  public add(element: T) {
+  public add(element: T): void {
     this._boxes.push(element);
   }
 
   public remove(): void {
-    this._boxes.pop();
+    if (this._boxes.length !== 0) {
+      this._boxes.pop();
+    }
   }
 
   get count(): number {
@@ -14,7 +16,7 @@ class Box<T> {
   }
 }
 
-const box = new Box<Number>();
+const box = new Box<number>();
 box.add(1);
 box.add(2);
 box.add(3);

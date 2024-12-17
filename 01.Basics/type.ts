@@ -5,7 +5,7 @@ type User = { name: string; city: string; income: number };
 
 const usersList: User[] = [];
 
-const myUser = { name: 'Iva', city: 'Sofia', income: 5700 };
+const myUser = { name: "Iva", city: "Sofia", income: 5700 };
 
 const addUser = (user: User): void => {
   usersList.push(user);
@@ -23,21 +23,21 @@ function printIt(value: funcInput) {
   return value;
 }
 
-console.log(printIt('Hello'));
+console.log(printIt("Hello"));
 
 // EXAMPLE 3
 
 // optional parameters, with questionmark we can specify something as optional
 type Employee = { name: string; position: string; income?: number };
-const myEmployee: Employee = { name: 'Iva', position: 'Marketing' };
+const myEmployee: Employee = { name: "Iva", position: "Marketing" };
 
 // EXAMPLE 4
 
 // this way we can create array of only specific values allowed
-type Food = 'apple' | 'cake' | 'soup';
+type Food = "apple" | "cake" | "soup";
 type DeliciousFoods = Food[];
 
-const foods: DeliciousFoods = ['apple', 'cake'];
+const foods: DeliciousFoods = ["apple", "cake"];
 
 // EXAMPLE 5 - recursive types
 
@@ -60,13 +60,13 @@ type Customer = CustomerDetails &
 
 const myCustomer: Customer = {
   id: 1,
-  name: 'Customer',
-  location: 'Sofia',
+  name: "Customer",
+  location: "Sofia",
   purchase() {
-    console.log('made purchase');
+    console.log("made purchase");
   },
   order() {
-    console.log('made order');
+    console.log("made order");
   },
 };
 
@@ -77,6 +77,6 @@ type Inventory = {
 };
 
 const myInventory: Inventory = {
-  'Item 1': 31,
-  'Item 2': 45,
+  "Item 1": 31,
+  "Item 2": 45,
 };

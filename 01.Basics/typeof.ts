@@ -1,5 +1,5 @@
 const product = {
-  name: 'Laptop',
+  name: "Laptop",
   price: 1000,
 };
 
@@ -7,6 +7,6 @@ const product = {
 type Product = typeof product;
 
 const myProduct: Product = {
-  name: 'Desk',
+  name: "Desk",
   price: 200,
 };

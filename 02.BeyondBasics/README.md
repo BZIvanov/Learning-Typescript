@@ -5,6 +5,7 @@
 3. generics
 4. classes
 5. promises
-6. type-conditionals
-7. return-type
-8. partial
+6. type-narrowing
+7. type-conditionals
+8. return-type
+9. partial
