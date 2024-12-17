@@ -10,5 +10,5 @@ class Seller {
   }
 }
 
-const user = new Seller('Pesho');
+const user = new Seller("Pesho");
 console.log(user.sayHello());

@@ -2,7 +2,7 @@
 
 // Example 1
 function getResult(flag: boolean): string | number {
-  return flag ? 'Success' : 404;
+  return flag ? "Success" : 404;
 }
 
 type ResultReturnType = ReturnType<typeof getResult>;
@@ -11,7 +11,7 @@ type ResultReturnType = ReturnType<typeof getResult>;
 function fetchData(callback: (data: string) => void): Promise<string> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      const data = 'Fetched data';
+      const data = "Fetched data";
       resolve(data);
       callback(data);
     }, 1000);

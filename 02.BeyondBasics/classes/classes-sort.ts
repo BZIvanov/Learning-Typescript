@@ -1,11 +1,11 @@
 const data = [
-  'Philadelphia|94.20|available',
-  'New York City|95.99|available',
-  'New York City|95.99|sold',
-  'Boston|126.20|departed',
+  "Philadelphia|94.20|available",
+  "New York City|95.99|available",
+  "New York City|95.99|sold",
+  "Boston|126.20|departed",
 ];
 
-const items = ['destination', 'price', 'status'];
+const items = ["destination", "price", "status"];
 const sortItem = items[Math.floor(Math.random() * 3)];
 
 class Ticket {
@@ -21,13 +21,13 @@ class Ticket {
 }
 
 const ticketsArray: Ticket[] = data.map((t: string) => {
-  const splited: string[] = t.split('|');
+  const splited: string[] = t.split("|");
   const price: number = Number(splited.splice(1, 1));
   return new Ticket(splited[0], price, splited[1]);
 });
 
 const sortedArray = ticketsArray.sort((a: Ticket, b: Ticket) => {
-  if (sortItem !== 'price') {
+  if (sortItem !== "price") {
     return a[sortItem].localeCompare(b[sortItem]);
   }
 

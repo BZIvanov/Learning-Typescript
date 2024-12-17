@@ -1,3 +1,5 @@
+// EXAMPLE 1
+
 // basic generic example. We specify in the diamond brackets what the type of the generic will be and then we provide the same type parameter and return the same type value
 const printValue = <T>(value: T): T => {
   console.log(value);
@@ -5,8 +7,10 @@ const printValue = <T>(value: T): T => {
   return value;
 };
 
-printValue('Hello');
+printValue("Hello");
 printValue(3);
+
+// EXAMPLE 2
 
 // here is how we can specify generic which will have length property
 const printValueLength = <T extends { length: number }>(value: T): number => {
@@ -15,8 +19,10 @@ const printValueLength = <T extends { length: number }>(value: T): number => {
   return value.length;
 };
 
-printValueLength('Hello');
+printValueLength("Hello");
 printValueLength([1, 2, 3]);
+
+// EXAMPLE 3
 
 // function declaration example
 function getItem<T>(list: Array<T>): T {
@@ -33,7 +39,7 @@ type Book<T, K> = {
 };
 
 const myBook: Book<string, number> = {
-  author: 'Me',
-  title: 'My book',
+  author: "Me",
+  title: "My book",
   year: 2023,
 };

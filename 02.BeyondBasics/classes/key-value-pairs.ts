@@ -6,7 +6,7 @@ class KeyValuePair<T, U> {
   setKeyValue(key: T, val: U) {
     this.key = key;
     this.val = val;
-    this.obj['a'] = val;
+    this.obj["a"] = val;
   }
 
   display(): void {
@@ -16,5 +16,5 @@ class KeyValuePair<T, U> {
 }
 
 const kvp = new KeyValuePair<number, string>();
-kvp.setKeyValue(1, 'Steve');
+kvp.setKeyValue(1, "Steve");
 kvp.display();
