@@ -1,7 +1,6 @@
-import { type FC } from "react";
 import Input from "./Input";
 
-const App: FC = () => {
+const App = () => {
   return <Input id="email" label="Email" type="email" />;
 };
 

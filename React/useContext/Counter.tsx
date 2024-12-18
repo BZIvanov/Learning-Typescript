@@ -1,6 +1,6 @@
-import { useCounterContext } from './useCounterContext';
+import { useCounterContext } from "./useCounterContext";
 
-function Counter() {
+const Counter = () => {
   const { count, increment, decrement } = useCounterContext();
 
   return (
@@ -10,6 +10,6 @@ function Counter() {
       <button onClick={decrement}>Minus</button>
     </div>
   );
-}
+};
 
 export default Counter;

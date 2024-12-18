@@ -1,13 +1,11 @@
-import { type FC } from 'react';
-
 type AlertSuccessProps = {
-  type: 'success';
+  type: "success";
   infoText: string;
 };
 
 type AlertErrorProps = {
-  type: 'error';
-  severity: 'low' | 'medium' | 'high';
+  type: "error";
+  severity: "low" | "medium" | "high";
   infoText: string;
   debugInfo: string;
 };
@@ -17,17 +15,17 @@ type AlertErrorProps = {
 type AlertProps = AlertSuccessProps | AlertErrorProps;
 
 const severityColorMap = {
-  low: 'yellow',
-  medium: 'orange',
-  high: 'red',
+  low: "yellow",
+  medium: "orange",
+  high: "red",
 };
 
-const Alert: FC<AlertProps> = (props) => {
+const Alert = (props: AlertProps) => {
   const { type, infoText } = props;
 
-  if (type === 'success') {
+  if (type === "success") {
     return (
-      <div style={{ backgroundColor: 'darkgray', color: 'green' }}>
+      <div style={{ backgroundColor: "darkgray", color: "green" }}>
         {infoText}
       </div>
     );
@@ -38,7 +36,7 @@ const Alert: FC<AlertProps> = (props) => {
 
   return (
     <div
-      style={{ backgroundColor: 'darkgray', color: severityColorMap[severity] }}
+      style={{ backgroundColor: "darkgray", color: severityColorMap[severity] }}
     >
       <p>{infoText}</p>
       <p>{debugInfo}</p>

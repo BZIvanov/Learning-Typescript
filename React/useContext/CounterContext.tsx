@@ -1,4 +1,5 @@
-import { type ReactNode, createContext, useState } from 'react';
+// type ReactNode is to specify, that ReactNode is only used as a type and it should be completely excluded from the compiled javascript files
+import { type ReactNode, createContext, useState } from "react";
 
 type CounterState = {
   count: number;

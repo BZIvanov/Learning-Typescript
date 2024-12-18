@@ -1,8 +1,7 @@
-import { type FC } from "react";
 import CustomText from "./components/CustomText";
 import EmphasizedText from "./components/EmphasizedText";
 
-const App: FC = () => {
+const App = () => {
   return (
     <div>
       <CustomText>Default Props</CustomText>

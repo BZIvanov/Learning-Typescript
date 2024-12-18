@@ -1,4 +1,4 @@
-import { type FC, type ReactNode } from 'react';
+import { type ReactNode } from "react";
 
 interface PostProps {
   title: string;
@@ -6,7 +6,7 @@ interface PostProps {
   children: ReactNode;
 }
 
-const Post: FC<PostProps> = ({ title, description, children }) => {
+const Post = ({ title, description, children }: PostProps) => {
   return (
     <div>
       <h1>{title}</h1>

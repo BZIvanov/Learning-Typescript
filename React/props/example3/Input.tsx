@@ -1,11 +1,11 @@
-import { type ComponentPropsWithoutRef, type FC } from 'react';
+import { type ComponentPropsWithoutRef } from "react";
 
 type InputProps = {
   id: string;
   label: string;
-} & ComponentPropsWithoutRef<'input'>;
+} & ComponentPropsWithoutRef<"input">;
 
-const Input: FC<InputProps> = ({ id, label, ...rest }) => {
+const Input = ({ id, label, ...rest }: InputProps) => {
   return (
     <div>
       <label htmlFor={id}>{label}</label>

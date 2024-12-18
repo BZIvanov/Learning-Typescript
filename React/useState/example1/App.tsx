@@ -1,5 +1,4 @@
-// type FC is to specify, that FC is only used as a type and it should be completely excluded from the compiled javascript files
-import { type FC, useState } from "react";
+import { useState } from "react";
 
 type Todo = {
   id: number;
@@ -7,7 +6,7 @@ type Todo = {
   description: string;
 };
 
-const App: FC = () => {
+const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const handleAddTodo = () => {
