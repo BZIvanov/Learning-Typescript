@@ -1,3 +1,4 @@
 # Type narrowing
 
-1. predicate
+1. discriminated
+2. predicate

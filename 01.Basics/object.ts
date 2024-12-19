@@ -30,3 +30,22 @@ for (let i = 0; i < 5; i++) {
 for (const listItem of myList) {
   listItem.printValue();
 }
+
+// EXAMPLE 5
+
+// here we have object with dynamic keys
+const techStack: {
+  [key: string]: {
+    rating: number;
+    description: string;
+  };
+} = {
+  html: {
+    rating: 5,
+    description: "HyperText Markup Language",
+  },
+  css: {
+    rating: 4,
+    description: "Cascading Style Sheets",
+  },
+};

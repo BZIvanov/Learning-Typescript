@@ -1,3 +1,4 @@
+// z is optional
 function getVolume(shape: { x: number; y: number; z?: number }): number {
   if (shape.z) {
     return shape.x * shape.y * shape.z;

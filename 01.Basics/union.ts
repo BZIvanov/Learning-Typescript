@@ -1,3 +1,10 @@
+// EXAMPLE 1
+
+let inputValue: string | number = "Hello";
+inputValue = 123;
+
+// EXAMPLE 2
+
 // with union type we can make something to be allowed to have more than one type
 function groupThem(a: number | string, b: number | string) {
   if (typeof a === "number" && typeof b === "number") {
