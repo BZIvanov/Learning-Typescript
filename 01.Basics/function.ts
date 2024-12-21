@@ -40,3 +40,12 @@ const getOptionalAddress = (name: string, city?: string): string => {
 };
 
 console.log(getOptionalAddress("John"));
+
+// EXAMPLE 4
+
+// rest parameter
+const getNumbers = (...numbers: number[]): void => {
+  console.log(numbers);
+};
+
+getNumbers(1, 2, 3, 4, 5);

@@ -1,27 +1,32 @@
-// EXAMPLE 1
+// EXAMPLE 1.1
 
-class RequestData {
+class User {
   // with typescript we need to specify our fields here and their type
-  method: string;
-  uri: string;
-  response: string;
+  name: string;
+  age: number;
+  email: string;
+  city?: string;
 
-  constructor(method: string, uri: string, response: string = "") {
-    this.method = method;
-    this.uri = uri;
-    this.response = response;
+  constructor(name: string, age: number, email: string, city?: string) {
+    this.name = name;
+    this.age = age;
+    this.email = email;
+    this.city = city;
   }
 }
 
-const myData = new RequestData("GET", "http://google.com", "");
-console.log(myData);
+const myUser = new User("John", 30, "john@mail.com");
 
-// EXAMPLE 2
+// EXAMPLE 1.2
 
-class ReqData {
+class Person {
   // alternative syntax is instead of specifying the fields in the class to specify them in the constructor
-  constructor(public readonly method: string, public readonly uri: string) {}
+  constructor(
+    public name: string,
+    public age: number,
+    public readonly email: string,
+    public city?: string
+  ) {}
 }
 
-const moreData = new ReqData("POST", "http://google.com");
-console.log(moreData);
+const myPerson = new Person("John", 30, "john@mail.com");

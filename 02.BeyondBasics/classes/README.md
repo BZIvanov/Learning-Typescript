@@ -7,3 +7,7 @@
 5. js-classes
 6. classes-generics
 7. key-value-pairs
+
+## Access modifiers
+
+Access modifiers provided by typescript are `public`, `protected` and `private`.

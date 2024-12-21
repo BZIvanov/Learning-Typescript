@@ -80,3 +80,9 @@ const myInventory: Inventory = {
   "Item 1": 31,
   "Item 2": 45,
 };
+
+// EXAMPLE 8 - function return type
+
+type Movie = { title: string; year: number };
+
+type buyMovie = { (title: string, year: number): Movie };

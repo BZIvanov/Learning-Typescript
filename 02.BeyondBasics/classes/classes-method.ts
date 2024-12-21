@@ -1,14 +1,10 @@
 class Seller {
-  private name: string;
+  constructor(private name: string) {}
 
-  constructor(name: string) {
-    this.name = name;
-  }
-
-  sayHello() {
+  sayHello(): string {
     return `${this.name} says hi!`;
   }
 }
 
-const user = new Seller("Pesho");
-console.log(user.sayHello());
+const seller = new Seller("John");
+console.log(seller.sayHello());

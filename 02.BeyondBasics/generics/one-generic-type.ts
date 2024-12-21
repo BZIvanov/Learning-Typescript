@@ -5,11 +5,28 @@ const getValue = <T>(value: T): T => {
   return value;
 };
 
-// the string type is infered
+// here the string type is infered
 getValue("Hello");
-getValue(3);
+// here we explicitly specify the type is number without relying on infered, just for the demo
+getValue<number>(3);
 
-// EXAMPLE 2
+// EXAMPLE 2.1
+
+function getItem<T>(list: Array<T>): T {
+  return list[0];
+}
+
+getItem<number>([1, 2, 3]);
+
+// EXAMPLE 2.2
+
+type GetItem = <T>(list: Array<T>) => T;
+
+const getItem2: GetItem = (list) => {
+  return list[0];
+};
+
+// EXAMPLE 3
 
 // here is how we can specify generic which will have length property
 const getValueLength = <T extends { length: number }>(value: T): number => {
@@ -18,12 +35,3 @@ const getValueLength = <T extends { length: number }>(value: T): number => {
 
 getValueLength("Hello");
 getValueLength([1, 2, 3]);
-
-// EXAMPLE 3
-
-function getItem<T>(list: Array<T>): T {
-  return list[0];
-}
-
-// here we explicitly specify the type is number without relying on infered, just for the demo
-getItem<number>([1, 2, 3]);

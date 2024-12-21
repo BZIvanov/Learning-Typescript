@@ -9,3 +9,4 @@
 7. type-conditionals
 8. return-type
 9. partial
+10. keyof

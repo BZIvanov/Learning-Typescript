@@ -6,9 +6,7 @@ class Box<T> {
   }
 
   public remove(): void {
-    if (this._boxes.length !== 0) {
-      this._boxes.pop();
-    }
+    this._boxes.pop();
   }
 
   get count(): number {

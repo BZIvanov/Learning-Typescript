@@ -11,3 +11,9 @@ const myBook: Book<string, number> = {
   title: "My book",
   year: 2023,
 };
+
+const mySecondBook: Book<string, string> = {
+  author: "Me",
+  title: "My book",
+  year: "2024",
+};
