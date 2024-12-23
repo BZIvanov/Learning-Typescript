@@ -7,6 +7,7 @@
 5. js-classes
 6. classes-generics
 7. key-value-pairs
+8. implements
 
 ## Access modifiers
 
