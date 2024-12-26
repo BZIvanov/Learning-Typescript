@@ -1,3 +1,11 @@
+// EXAMPLE 1
+
+// now the inputType will change based on the value of input
+let input = 10;
+let inputType: typeof input;
+
+// EXAMPLE 2
+
 const product = {
   name: "Laptop",
   price: 1000,
