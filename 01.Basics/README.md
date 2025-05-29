@@ -27,8 +27,9 @@ List of the basic types and usage:
 
 ## Type vs Interface
 
-Interface could be implmented by a class and is usually used for objects.
-Type can hold variety of types, not just objects, which makes them more flexible.
+`interface` could be implmented by a class and is usually used for objects. `type` can hold variety of types, not just objects, which makes them more flexible.
+
+When you declare multiple interfaces with the same name, TypeScript automatically merges their properties into a single `interface`. With `type` we can't do that, because we will have naming conflict.
 
 ## Syntax comparison for array vs tuple
 

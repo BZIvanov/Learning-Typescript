@@ -1,6 +1,6 @@
-type Construnctor = new (...args: any[]) => {};
+type Constructor = new (...args: any[]) => {};
 
-function Timestamped<T extends Construnctor>(Base: T) {
+function Timestamped<T extends Constructor>(Base: T) {
   return class extends Base {
     protected timestamp: Date = new Date();
 
