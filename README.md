@@ -40,6 +40,10 @@ Run the below command to create configuration file for your project:
 tsc --init
 ```
 
+## TypeScript with Node.js
+
+Check out the respective section in this [repo](https://github.com/BZIvanov/Learning-Node.js) for TypeScript with Node.js.
+
 ## TypeScript with React.js
 
 Check out this [repo](https://github.com/BZIvanov/Learning-ReactJS) for TypeScript with React.js.
