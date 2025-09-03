@@ -1,4 +1,4 @@
-# Learning Typescript
+# Learning TypeScript
 
 Learning materials related to TypeScript.
 
